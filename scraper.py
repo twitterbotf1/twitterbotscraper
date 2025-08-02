@@ -10,9 +10,24 @@ HEADERS = {
     'Connection': 'keep-alive'
 }
 
-SITE_RULES = { ... }  # keep same rules
+SITE_RULES = {
+    'formula1.com': {'allowed_paths': ['/latest/article/'], 'disallowed_paths': ['/tags/']},
+    'motorsport.com': {'allowed_paths': ['/news/'], 'disallowed_paths': ['/videos/', '/galleries/', '/info/'], 'path_must_end_with_number': True},
+    'autosport.com': {'allowed_paths': ['/news/'], 'disallowed_paths': ['/videos/', '/galleries/', '/info/'], 'path_must_end_with_number': True},
+    'bbc.co.uk': {'allowed_paths': ['/articles/'], 'disallowed_paths': []},
+    'the-race.com': {'allowed_paths': ['/formula-1/', '/indycar/', '/formula-e/', '/motogp/'], 'disallowed_paths': ['/category/', '/news/']},
+    'planetf1.com': {'allowed_paths': ['/news/', '/features/'], 'disallowed_paths': ['/tag/', '/team/', '/driver/', '/author/']},
+    'racefans.net': {'allowed_paths': ['/2024/', '/2025/'], 'disallowed_paths': ['/calendar/']},
+    'f1technical.net': {'allowed_paths': ['/news/', '/features/', '/articles/', '/development/'], 'disallowed_paths': ['/forum/', '/gallery/']},
+    'grandprix.com': {'allowed_paths': ['/news/', '/races/'], 'disallowed_paths': [], 'path_must_end_with_html': True},
+    'racingnews365.com': {'allowed_paths': ['/'], 'disallowed_paths': ['/drivers', '/teams', '/circuits', '/video', '/register', '/interview', '/podcast']},
+    'skysports.com': {'allowed_paths': ['/f1/news/'], 'disallowed_paths': ['/f1/video/', '/f1/live-blog/']},
+    'it.motorsport.com': {'allowed_paths': ['/news/'], 'disallowed_paths': ['/videos/', '/galleries/', '/info/'], 'path_must_end_with_number': True},
+    'gazzetta.it': {'allowed_paths': ['/'], 'disallowed_paths': [], 'path_must_end_with_html': True},
+    'autosprint.corrieredellosport.it': {'allowed_paths': ['/news/', '/foto/'], 'disallowed_paths': ['/live/']},
+    'f1oversteer.com': {'allowed_paths': ['/news/'], 'disallowed_paths': ['/page/', '/tag/']}
+}
 
-# --- DATABASE CONNECTION ---
 url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
 if not url or not key:
@@ -21,7 +36,6 @@ if not url or not key:
 
 supabase = create_client(url, key)
 
-# --- FUNCTIONS ---
 def get_sources_from_db():
     try:
         res = supabase.table('sources').select('url').order('id', desc=True).execute()
@@ -38,47 +52,37 @@ def clean_url(url, base_url):
 def is_valid_article_link_by_rule(url, domain, rule):
     parsed_url = urlparse(url)
     if domain not in parsed_url.netloc: return False
-    allowed = rule.get('allowed_paths', [])
-    disallowed = rule.get('disallowed_paths', [])
-    if not any(a in parsed_url.path for a in allowed): return False
-    if any(d in parsed_url.path for d in disallowed): return False
-    segments = [seg for seg in parsed_url.path.split('/') if seg]
-    if rule.get('path_must_end_with_number') and (not segments or not segments[-1].isdigit()): return False
+    if not any(a in parsed_url.path for a in rule.get('allowed_paths', [])): return False
+    if any(d in parsed_url.path for d in rule.get('disallowed_paths', [])): return False
+    segs = [s for s in parsed_url.path.split('/') if s]
+    if rule.get('path_must_end_with_number') and (not segs or not segs[-1].isdigit()): return False
     if rule.get('path_must_end_with_html') and not parsed_url.path.endswith(('.html', '.shtml')): return False
     return True
 
 def scrape_live_links(sources):
-    live_urls = set()
-    session = requests.Session()
-    session.headers.update(HEADERS)
-    for source_url in sources:
-        domain = urlparse(source_url).netloc.replace('www.', '')
-        rule = SITE_RULES.get(domain)
+    live = set()
+    s = requests.Session(); s.headers.update(HEADERS)
+    for src in sources:
+        dom = urlparse(src).netloc.replace('www.', '')
+        rule = SITE_RULES.get(dom)
         try:
-            r = session.get(source_url, timeout=15)
-            r.raise_for_status()
+            r = s.get(src, timeout=15); r.raise_for_status()
             soup = BeautifulSoup(r.content, 'html.parser')
-            base = f"{urlparse(source_url).scheme}://{urlparse(source_url).netloc}"
+            base = f"{urlparse(src).scheme}://{urlparse(src).netloc}"
             links = {clean_url(a['href'], base) for a in soup.find_all('a', href=True)}
-            for link in links:
-                if rule and is_valid_article_link_by_rule(link, domain, rule):
-                    live_urls.add(link)
-                elif not rule and urlparse(link).path and len(urlparse(link).path) > 15:
-                    live_urls.add(link)
+            for l in links:
+                if rule and is_valid_article_link_by_rule(l, dom, rule): live.add(l)
+                elif not rule and urlparse(l).path and len(urlparse(l).path) > 15: live.add(l)
         except Exception as e:
-            print(f"Failed to fetch {source_url}: {e}")
-    return live_urls
+            print(f"Failed {src}: {e}")
+    return live
 
-def read_links_from_file(fname="raw-urls.txt"):
-    if not os.path.exists(fname):
-        open(fname, "w").close()
-        return set()
+def read_links_from_file(f="raw-urls.txt"):
+    if not os.path.exists(f): open(f, "w").close(); return set()
     try:
-        with open(fname, "r", encoding="utf-8") as f:
-            return {line.strip() for line in f if line.strip()}
+        with open(f, "r", encoding="utf-8") as x: return {i.strip() for i in x if i.strip()}
     except Exception as e:
-        print(f"Read error {fname}: {e}")
-        return set()
+        print(f"Read error {f}: {e}"); return set()
 
 def add_links_to_db(links):
     if not links: return 0
@@ -87,30 +91,21 @@ def add_links_to_db(links):
         res = supabase.table('to_process').insert(data).execute()
         return len(res.data)
     except Exception as e:
-        print(f"Insert error: {e}")
-        return 0
+        print(f"Insert error: {e}"); return 0
 
-def save_links_to_file(links, fname="raw-urls.txt"):
+def save_links_to_file(links, f="raw-urls.txt"):
     try:
-        with open(fname, "w", encoding="utf-8") as f:
-            f.write("\n".join(sorted(list(links))))
+        with open(f, "w", encoding="utf-8") as x: x.write("\n".join(sorted(list(links))))
     except Exception as e:
-        print(f"Save error {fname}: {e}")
+        print(f"Save error {f}: {e}")
 
-# --- MAIN ---
 def main():
     sources = get_sources_from_db()
-    if not sources:
-        print("No sources found.")
-        return
-
+    if not sources: print("No sources."); return
     live = scrape_live_links(sources)
     old = read_links_from_file()
     new = live - old
-    if not new:
-        print("No new links.")
-        return
-
+    if not new: print("No new links."); return
     added = add_links_to_db(new)
     save_links_to_file(live)
     print(f"Added {added} new links.")
