@@ -15,7 +15,7 @@ SITE_RULES = {
     'motorsport.com': {'allowed_paths': ['/news/'], 'disallowed_paths': ['/videos/', '/galleries/', '/info/'], 'path_must_end_with_number': True},
     'autosport.com': {'allowed_paths': ['/news/'], 'disallowed_paths': ['/videos/', '/galleries/', '/info/'], 'path_must_end_with_number': True},
     'bbc.co.uk': {'allowed_paths': ['/articles/'], 'disallowed_paths': []},
-    'the-race.com': {'allowed_paths': ['/formula-1/', '/indycar/', '/formula-e/', '/motogp/'], 'disallowed_paths': ['/category/', '/news/']},
+    'the-race.com': {'allowed_paths': ['/formula-1/'], 'disallowed_paths': ['/category/', '/news/']},
     'planetf1.com': {'allowed_paths': ['/news/', '/features/'], 'disallowed_paths': ['/tag/', '/team/', '/driver/', '/author/']},
     'racefans.net': {'allowed_paths': ['/2024/', '/2025/'], 'disallowed_paths': ['/calendar/']},
     'f1technical.net': {'allowed_paths': ['/news/', '/features/', '/articles/', '/development/'], 'disallowed_paths': ['/forum/', '/gallery/']},
@@ -78,34 +78,44 @@ def scrape_live_links(sources):
     return live
 
 def read_links_from_file(f="raw-urls.txt"):
-    if not os.path.exists(f): open(f, "w").close(); return set()
+    if not os.path.exists(f):
+        open(f, "w").close()
+        return set()
     try:
-        with open(f, "r", encoding="utf-8") as x: return {i.strip() for i in x if i.strip()}
+        with open(f, "r", encoding="utf-8") as x:
+            return {i.strip() for i in x if i.strip()}
     except Exception as e:
-        print(f"Read error {f}: {e}"); return set()
+        print(f"Read error {f}: {e}")
+        return set()
 
 def add_links_to_db(links):
     if not links: return 0
     try:
-        data = [{"url": u} for u in links]
+        data = [{"url": u, "bot": "formula"} for u in links]
         res = supabase.table('to_process').insert(data).execute()
         return len(res.data)
     except Exception as e:
-        print(f"Insert error: {e}"); return 0
+        print(f"Insert error: {e}")
+        return 0
 
 def save_links_to_file(links, f="raw-urls.txt"):
     try:
-        with open(f, "w", encoding="utf-8") as x: x.write("\n".join(sorted(list(links))))
+        with open(f, "w", encoding="utf-8") as x:
+            x.write("\\n".join(sorted(list(links))))
     except Exception as e:
         print(f"Save error {f}: {e}")
 
 def main():
     sources = get_sources_from_db()
-    if not sources: print("No sources."); return
+    if not sources:
+        print("No sources.")
+        return
     live = scrape_live_links(sources)
     old = read_links_from_file()
     new = live - old
-    if not new: print("No new links."); return
+    if not new:
+        print("No new links.")
+        return
     added = add_links_to_db(new)
     save_links_to_file(live)
     print(f"Added {added} new links.")
