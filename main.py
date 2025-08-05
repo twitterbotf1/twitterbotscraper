@@ -1,4 +1,3 @@
-# Save this as main.py
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -50,9 +49,9 @@ def get_sources_from_db(supabase: Client) -> list[str]:
         print(f"🔴 ERROR: Could not fetch sources from Supabase. Reason: {e}")
         return []
 
-def read_links_from_file(filename="processed-urls.txt") -> set:
+def read_links_from_file(filename="raw-urls.txt") -> set: # Renamed file for consistency
     if not os.path.exists(filename):
-        print(f"🟡 WARNING: Processed URLs file '{filename}' not found. Creating it.")
+        print(f"🟡 WARNING: URLs file '{filename}' not found. Creating it.")
         open(filename, "w").close()
         return set()
     try:
@@ -62,16 +61,13 @@ def read_links_from_file(filename="processed-urls.txt") -> set:
         print(f"🔴 ERROR: Could not read from {filename}. Reason: {e}")
         return set()
 
-def save_links_to_file(links: set, filename="processed-urls.txt"):
-    print(f"\n--- Updating {filename} with {len(links)} links for the next run ---")
+def save_links_to_file(links: set, filename="raw-urls.txt"): # Renamed file for consistency
     try:
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(sorted(list(links))))
-        print("✅ Save complete.")
     except Exception as e:
         print(f"🔴 ERROR: Could not save to {filename}. Reason: {e}")
 
-# --- NEW: TIMESTAMP ASSIGNMENT FUNCTION ---
 def assign_timestamps(links: set) -> list:
     ist = pytz.timezone('Asia/Kolkata')
     now = datetime.now(ist)
@@ -82,6 +78,16 @@ def assign_timestamps(links: set) -> list:
         timestamp = (now + i * step).isoformat()
         assigned.append({"url": url, "bot": "formula", "time": timestamp})
     return assigned
+
+# --- NEW: FUNCTION FROM SCRIPT 1 ---
+def add_links_to_db(supabase: Client, links_with_time: list) -> int:
+    if not links_with_time: return 0
+    try:
+        res = supabase.table('to_process').insert(links_with_time).execute()
+        return len(res.data)
+    except Exception as e:
+        print(f"Insert error: {e}")
+        return 0
 
 # --- URL VALIDATION & SCRAPING (Unchanged) ---
 def clean_url(url: str, base_url: str) -> str:
@@ -114,10 +120,11 @@ def get_html_with_playwright(url: str) -> str:
         print(f"🔴 ERROR: Playwright failed for {url}. Reason: {e}")
         return ""
 
-def scrape_live_links(sources_to_scrape: list[str]) -> dict:
-    categorized_urls = {urlparse(s).netloc.replace('www.', ''): set() for s in sources_to_scrape}
+def scrape_and_filter_links(sources_to_scrape: list[str]) -> set:
     session = requests.Session()
     session.headers.update(HEADERS)
+    live_links = set()
+    
     for i, source_url in enumerate(sources_to_scrape):
         domain = urlparse(source_url).netloc.replace('www.', '')
         print(f"\n[{i+1}/{len(sources_to_scrape)}] Scraping: {domain}...")
@@ -131,60 +138,57 @@ def scrape_live_links(sources_to_scrape: list[str]) -> dict:
                 response = session.get(source_url, timeout=15)
                 response.raise_for_status()
                 html_content = response.content
+            
             if not html_content:
                 print(f"🟡 WARNING: No HTML content found for {source_url}.")
                 continue
+
             soup = BeautifulSoup(html_content, 'html.parser')
             base_url = f"{urlparse(source_url).scheme}://{urlparse(source_url).netloc}"
             found_links = {clean_url(a['href'], base_url) for a in soup.find_all('a', href=True)}
-            categorized_urls[domain].update(found_links)
-            print(f"    -> Found {len(found_links)} total links.")
+            
+            rule = SITE_RULES.get(domain)
+            if not rule:
+                print(f"🟡 WARNING: No rule found for '{domain}'. Skipping filtering.")
+                continue
+                
+            valid_for_domain = {link for link in found_links if is_valid_article_link_by_rule(link, domain, rule)}
+            print(f"    -> Found {len(valid_for_domain)} valid articles for {domain}.")
+            live_links.update(valid_for_domain)
+
         except requests.RequestException as e:
             print(f"🔴 ERROR: Could not fetch {source_url}. Reason: {e}")
-    return categorized_urls
+            
+    return live_links
 
-# --- MAIN EXECUTION (UPDATED) ---
+# --- MAIN EXECUTION (MODIFIED) ---
 def main():
-    print("--- Starting Scraper ---")
     supabase = init_connection()
     if not supabase: return
 
     sources = get_sources_from_db(supabase)
-    if not sources: return
+    if not sources:
+        print("No sources.")
+        return
 
-    scraped_links_by_domain = scrape_live_links(sources)
+    # Renamed to match Script 1
+    live = scrape_and_filter_links(sources)
+    old = read_links_from_file()
+    new = live - old
+
+    if not new:
+        print("\nNo new links.")
+        return
+
+    # Renamed to match Script 1
+    new_with_time = assign_timestamps(new)
+    added = add_links_to_db(supabase, new_with_time)
     
-    print("\n--- Filtering and Validating Links ---")
-    all_valid_links = set()
-    for domain, links in scraped_links_by_domain.items():
-        rule = SITE_RULES.get(domain)
-        if not rule:
-            print(f"🟡 WARNING: No rule found for '{domain}'. Skipping.")
-            continue
-        valid_for_domain = {link for link in links if is_valid_article_link_by_rule(link, domain, rule)}
-        print(f"✅ Found {len(valid_for_domain)} valid articles for {domain}.")
-        all_valid_links.update(valid_for_domain)
-
-    # Use file-based duplicate checking
-    processed_links = read_links_from_file()
-    new_links_to_add = all_valid_links - processed_links
-    
-    if not new_links_to_add:
-        print("\n✅ No new articles to add. All found links have been processed before.")
-    else:
-        print(f"\n--- Found {len(new_links_to_add)} New Articles ---")
-        # Assign timestamps and write to the 'to_process' table
-        data_to_insert = assign_timestamps(new_links_to_add)
-        print(f"--- Writing {len(data_to_insert)} new articles with timestamps to Supabase ---")
-        try:
-            supabase.table('to_process').insert(data_to_insert).execute()
-            print("✅ Successfully wrote new articles to the database.")
-        except Exception as e:
-            print(f"🔴 ERROR: Failed to write to Supabase. Reason: {e}")
-
-    # Update the file with all links found in this run for the next execution
-    save_links_to_file(processed_links.union(all_valid_links))
+    # Logic from Script 1
+    save_links_to_file(live)
+    print(f"\nAdded {added} new links.")
     print("--- Scraper Finished ---")
 
+
 if __name__ == "__main__":
-    main()
+    main()```
