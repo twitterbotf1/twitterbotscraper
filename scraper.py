@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import os
 from urllib.parse import urlparse, urljoin
 from supabase import create_client
+from datetime import datetime, timedelta
+import pytz
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0',
@@ -14,7 +16,7 @@ SITE_RULES = {
     'formula1.com': {'allowed_paths': ['/latest/article/'], 'disallowed_paths': ['/tags/']},
     'motorsport.com': {'allowed_paths': ['/news/'], 'disallowed_paths': ['/videos/', '/galleries/', '/info/'], 'path_must_end_with_number': True},
     'autosport.com': {'allowed_paths': ['/news/'], 'disallowed_paths': ['/videos/', '/galleries/', '/info/'], 'path_must_end_with_number': True},
-    'bbc.co.uk': {'allowed_paths': ['/articles/'], 'disallowed_paths': []},
+    'bbc.co.uk': {'allowed_paths': ['/sport/formula1/'], 'disallowed_paths': []},
     'the-race.com': {'allowed_paths': ['/formula-1/'], 'disallowed_paths': ['/category/', '/news/']},
     'planetf1.com': {'allowed_paths': ['/news/', '/features/'], 'disallowed_paths': ['/tag/', '/team/', '/driver/', '/author/']},
     'racefans.net': {'allowed_paths': ['/2024/', '/2025/'], 'disallowed_paths': ['/calendar/']},
@@ -88,11 +90,25 @@ def read_links_from_file(f="raw-urls.txt"):
         print(f"Read error {f}: {e}")
         return set()
 
-def add_links_to_db(links):
-    if not links: return 0
+# ✅ Custom timestamp assignment logic (3-hour spread, IST)
+def assign_timestamps(links):
+    ist = pytz.timezone('Asia/Kolkata')
+    now = datetime.now(ist)
+    count = len(links)
+    if count == 1:
+        step = timedelta(hours=0)
+    else:
+        step = timedelta(hours=3) / (count - 1)  # divide 3h across intervals
+    assigned = []
+    for i, u in enumerate(sorted(links)):
+        ts = (now + i * step).isoformat()
+        assigned.append({"url": u, "bot": "formula", "time": ts})
+    return assigned
+
+def add_links_to_db(links_with_time):
+    if not links_with_time: return 0
     try:
-        data = [{"url": u, "bot": "formula"} for u in links]
-        res = supabase.table('to_process').insert(data).execute()
+        res = supabase.table('to_process').insert(links_with_time).execute()
         return len(res.data)
     except Exception as e:
         print(f"Insert error: {e}")
@@ -101,7 +117,7 @@ def add_links_to_db(links):
 def save_links_to_file(links, f="raw-urls.txt"):
     try:
         with open(f, "w", encoding="utf-8") as x:
-            x.write("\\n".join(sorted(list(links))))
+            x.write("\n".join(sorted(list(links))))
     except Exception as e:
         print(f"Save error {f}: {e}")
 
@@ -116,7 +132,8 @@ def main():
     if not new:
         print("No new links.")
         return
-    added = add_links_to_db(new)
+    new_with_time = assign_timestamps(new)
+    added = add_links_to_db(new_with_time)
     save_links_to_file(live)
     print(f"Added {added} new links.")
 
