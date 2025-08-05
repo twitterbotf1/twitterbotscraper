@@ -1,7 +1,11 @@
-name: Run Scraper Once
+name: Run Formula Scraper
 
 on:
-  workflow_dispatch:   # ✅ Manual trigger only
+  workflow_dispatch:   # Run manually only once when triggered
+    inputs:
+      reason:
+        description: 'Manual trigger reason'
+        required: false
 
 jobs:
   run-scraper:
@@ -10,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -27,3 +33,11 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: python main.py
+
+      - name: Commit updated raw-urls.txt
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add raw-urls.txt
+          git commit -m "Update raw-urls.txt" || echo "No changes to commit"
+          git push
