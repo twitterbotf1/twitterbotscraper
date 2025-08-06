@@ -7,6 +7,7 @@ from supabase import create_client, Client
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 from datetime import datetime, timedelta
 import pytz
+import random # <-- Added import
 
 # --- HEADERS, SITE RULES & PLAYWRIGHT SITES (Unchanged) ---
 HEADERS = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Accept-Language': 'en-US,en;q=0.9', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive' }
@@ -49,7 +50,7 @@ def get_sources_from_db(supabase: Client) -> list[str]:
         print(f"🔴 ERROR: Could not fetch sources from Supabase. Reason: {e}")
         return []
 
-def read_links_from_file(filename="raw-urls.txt") -> set: # Renamed file for consistency
+def read_links_from_file(filename="raw-urls.txt") -> set:
     if not os.path.exists(filename):
         print(f"🟡 WARNING: URLs file '{filename}' not found. Creating it.")
         open(filename, "w").close()
@@ -61,20 +62,27 @@ def read_links_from_file(filename="raw-urls.txt") -> set: # Renamed file for con
         print(f"🔴 ERROR: Could not read from {filename}. Reason: {e}")
         return set()
 
-def save_links_to_file(links: set, filename="raw-urls.txt"): # Renamed file for consistency
+def save_links_to_file(links: set, filename="raw-urls.txt"):
     try:
         with open(filename, "w", encoding="utf-8") as f:
             f.write("\n".join(sorted(list(links))))
     except Exception as e:
         print(f"🔴 ERROR: Could not save to {filename}. Reason: {e}")
 
+# --- TIMESTAMP ASSIGNMENT (MODIFIED) ---
 def assign_timestamps(links: set) -> list:
     ist = pytz.timezone('Asia/Kolkata')
     now = datetime.now(ist)
     count = len(links)
     step = timedelta(hours=3) / (count - 1) if count > 1 else timedelta(hours=0)
+    
+    # Convert set to list and shuffle it to randomize order
+    url_list = list(links)
+    random.shuffle(url_list)
+    
     assigned = []
-    for i, url in enumerate(sorted(list(links))):
+    # Iterate over the now-shuffled list
+    for i, url in enumerate(url_list):
         timestamp = (now + i * step).isoformat()
         assigned.append({"url": url, "bot": "formula", "time": timestamp})
     return assigned
@@ -161,7 +169,7 @@ def scrape_and_filter_links(sources_to_scrape: list[str]) -> set:
             
     return live_links
 
-# --- MAIN EXECUTION (MODIFIED) ---
+# --- MAIN EXECUTION (Unchanged) ---
 def main():
     supabase = init_connection()
     if not supabase: return
@@ -171,7 +179,6 @@ def main():
         print("No sources.")
         return
 
-    # Renamed to match Script 1
     live = scrape_and_filter_links(sources)
     old = read_links_from_file()
     new = live - old
@@ -180,11 +187,9 @@ def main():
         print("\nNo new links.")
         return
 
-    # Renamed to match Script 1
     new_with_time = assign_timestamps(new)
     added = add_links_to_db(supabase, new_with_time)
     
-    # Logic from Script 1
     save_links_to_file(live)
     print(f"\nAdded {added} new links.")
     print("--- Scraper Finished ---")
