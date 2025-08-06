@@ -1,11 +1,14 @@
 name: Run Formula Scraper
 
 on:
-  workflow_dispatch:   # Run manually only once when triggered
+  workflow_dispatch:
     inputs:
       reason:
         description: 'Manual trigger reason'
         required: false
+
+permissions:
+  contents: write
 
 jobs:
   run-scraper:
