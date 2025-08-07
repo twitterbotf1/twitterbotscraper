@@ -31,13 +31,22 @@ jobs:
           pip install requests beautifulsoup4 playwright supabase pytz
           playwright install chromium
 
+      - name: Run pre-processing script to wipe table
+        id: pre-process
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python main_p.py
+
       - name: Run scraper
+        if: success() # This step only runs if the previous step (pre-process) succeeded
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: python main.py
 
       - name: Commit updated raw-urls.txt
+        if: success() # This step also depends on the successful run of the scraper
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
