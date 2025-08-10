@@ -1,55 +1,52 @@
-name: Run Formula Scraper
+name: Manual Formula Scraper
 
 on:
   workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Manual trigger reason'
-        required: false
 
 permissions:
   contents: write
 
 jobs:
-  run-scraper:
+  scrape-and-process:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: true
+      - name: Check out repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 playwright supabase pytz
-          playwright install chromium
+          pip install -r requirements.txt
 
-      - name: Run pre-processing script to wipe table
-        id: pre-process
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      - name: Install Playwright browsers
+        run: python -m playwright install --with-deps
+
+      - name: Run Preparation Script (main_p.py)
         run: python main_p.py
-
-      - name: Run scraper
-        if: success() # This step only runs if the previous step (pre-process) succeeded
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+
+      - name: Run Scraper Script (main.py)
         run: python main.py
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          
+      - name: Run Processor Script (main_d.py)
+        run: python main_d.py
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
 
       - name: Commit updated raw-urls.txt
-        if: success() # This step also depends on the successful run of the scraper
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add raw-urls.txt
-          git commit -m "Update raw-urls.txt" || echo "No changes to commit"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Update raw-urls.txt with latest links"
+          file_pattern: "raw-urls.txt"
