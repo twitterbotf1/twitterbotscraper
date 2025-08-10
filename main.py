@@ -1,13 +1,12 @@
+# filename: main.py
+
 import requests
 from bs4 import BeautifulSoup
 import os
 import time
 from urllib.parse import urlparse, urljoin
 from supabase import create_client, Client
-from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
-from datetime import datetime, timedelta
-import pytz
-import random # <-- Added import
+from playwright.sync_api import sync_playwright
 
 # --- HEADERS, SITE RULES & PLAYWRIGHT SITES (Unchanged) ---
 HEADERS = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Accept-Language': 'en-US,en;q=0.9', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive' }
@@ -32,15 +31,11 @@ PLAYWRIGHT_SITES = ['f1oversteer.com', 'racefans.net', 'bbc.co.uk', 'formula1.co
 
 # --- DATABASE & FILE HANDLING ---
 def init_connection() -> Client:
-    if "SUPABASE_URL" not in os.environ or "SUPABASE_KEY" not in os.environ:
-        print("🔴 ERROR: Supabase credentials not set in environment variables.")
-        return None
     url = os.environ.get("SUPABASE_URL")
     key = os.environ.get("SUPABASE_KEY")
     return create_client(url, key)
 
 def get_sources_from_db(supabase: Client) -> list[str]:
-    """Fetches the list of source URLs from the 'sources' table in Supabase."""
     try:
         res = supabase.table('sources').select('url').order('id', desc=True).execute()
         sources = [item['url'] for item in res.data]
@@ -52,52 +47,21 @@ def get_sources_from_db(supabase: Client) -> list[str]:
 
 def read_links_from_file(filename="raw-urls.txt") -> set:
     if not os.path.exists(filename):
-        print(f"🟡 WARNING: URLs file '{filename}' not found. Creating it.")
         open(filename, "w").close()
         return set()
-    try:
-        with open(filename, "r", encoding="utf-8") as f:
-            return {line.strip() for line in f if line.strip()}
-    except Exception as e:
-        print(f"🔴 ERROR: Could not read from {filename}. Reason: {e}")
-        return set()
+    with open(filename, "r", encoding="utf-8") as f:
+        return {line.strip() for line in f if line.strip()}
 
 def save_links_to_file(links: set, filename="raw-urls.txt"):
-    try:
-        with open(filename, "w", encoding="utf-8") as f:
-            f.write("\n".join(sorted(list(links))))
-    except Exception as e:
-        print(f"🔴 ERROR: Could not save to {filename}. Reason: {e}")
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("\n".join(sorted(list(links))))
 
-# --- TIMESTAMP ASSIGNMENT (MODIFIED) ---
-def assign_timestamps(links: set) -> list:
-    ist = pytz.timezone('Asia/Kolkata')
-    now = datetime.now(ist)
-    count = len(links)
-    step = timedelta(hours=3) / (count - 1) if count > 1 else timedelta(hours=0)
-    
-    # Convert set to list and shuffle it to randomize order
-    url_list = list(links)
-    random.shuffle(url_list)
-    
-    assigned = []
-    # Iterate over the now-shuffled list
-    for i, url in enumerate(url_list):
-        timestamp = (now + i * step).isoformat()
-        assigned.append({"url": url, "bot": "formula", "time": timestamp})
-    return assigned
+def save_new_links(links: set, filename="new-urls.txt"):
+    print(f"Writing {len(links)} new links to '{filename}'...")
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("\n".join(sorted(list(links))))
 
-# --- NEW: FUNCTION FROM SCRIPT 1 ---
-def add_links_to_db(supabase: Client, links_with_time: list) -> int:
-    if not links_with_time: return 0
-    try:
-        res = supabase.table('to_process').insert(links_with_time).execute()
-        return len(res.data)
-    except Exception as e:
-        print(f"Insert error: {e}")
-        return 0
-
-# --- URL VALIDATION & SCRAPING (Unchanged) ---
+# --- URL VALIDATION & SCRAPING ---
 def clean_url(url: str, base_url: str) -> str:
     full_url = urljoin(base_url, url)
     parsed = urlparse(full_url)
@@ -147,18 +111,14 @@ def scrape_and_filter_links(sources_to_scrape: list[str]) -> set:
                 response.raise_for_status()
                 html_content = response.content
             
-            if not html_content:
-                print(f"🟡 WARNING: No HTML content found for {source_url}.")
-                continue
+            if not html_content: continue
 
-            soup = BeautifulSoup(html_content, 'html.parser')
+            soup = BeautifulSoup(html_content, 'lxml')
             base_url = f"{urlparse(source_url).scheme}://{urlparse(source_url).netloc}"
             found_links = {clean_url(a['href'], base_url) for a in soup.find_all('a', href=True)}
             
             rule = SITE_RULES.get(domain)
-            if not rule:
-                print(f"🟡 WARNING: No rule found for '{domain}'. Skipping filtering.")
-                continue
+            if not rule: continue
                 
             valid_for_domain = {link for link in found_links if is_valid_article_link_by_rule(link, domain, rule)}
             print(f"    -> Found {len(valid_for_domain)} valid articles for {domain}.")
@@ -169,31 +129,30 @@ def scrape_and_filter_links(sources_to_scrape: list[str]) -> set:
             
     return live_links
 
-# --- MAIN EXECUTION (Unchanged) ---
+# --- MAIN EXECUTION ---
 def main():
+    print("--- Starting Scraper Script (main.py) ---")
     supabase = init_connection()
-    if not supabase: return
+    if not supabase: sys.exit(1)
 
     sources = get_sources_from_db(supabase)
     if not sources:
-        print("No sources.")
+        print("No sources found. Exiting.")
         return
 
-    live = scrape_and_filter_links(sources)
-    old = read_links_from_file()
-    new = live - old
+    live_links = scrape_and_filter_links(sources)
+    old_links = read_links_from_file()
+    new_links = live_links - old_links
 
-    if not new:
-        print("\nNo new links.")
-        return
+    if not new_links:
+        print("\n✅ No new links found.")
+    else:
+        print(f"\n✅ Found {len(new_links)} new links.")
+        save_new_links(new_links)
 
-    new_with_time = assign_timestamps(new)
-    added = add_links_to_db(supabase, new_with_time)
-    
-    save_links_to_file(live)
-    print(f"\nAdded {added} new links.")
+    save_links_to_file(live_links)
+    print(f"Updated 'raw-urls.txt' with {len(live_links)} total links.")
     print("--- Scraper Finished ---")
-
 
 if __name__ == "__main__":
     main()
