@@ -1,5 +1,6 @@
+supabase
 requests
 beautifulsoup4
-supabase
 playwright
 pytz
+lxml
