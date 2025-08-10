@@ -1,5 +1,3 @@
-# filename: main_p.py
-
 import os
 import sys
 from supabase import create_client, Client
@@ -21,8 +19,7 @@ def wipe_to_process_table(supabase: Client) -> bool:
     """Deletes all records from the 'to_process' table."""
     try:
         print("Attempting to wipe 'to_process' table...")
-        # The filter `neq('bot', 'a-value-that-is-never-used')` selects all rows to delete.
-        data, count = supabase.table('to_process').delete().neq('bot', 'a-value-that-will-never-be-used').execute()
+        supabase.table('to_process').delete().neq('bot', 'a-value-that-will-never-be-used').execute()
         print(f"✅ Success: Wiped 'to_process' table.")
         return True
     except Exception as e:
@@ -34,16 +31,14 @@ def main():
     print("--- Starting Pre-processing Script (main_p.py) ---")
     supabase = init_connection()
     if not supabase:
-        sys.exit(1) # Exit with error code
+        sys.exit(1)
 
     if wipe_to_process_table(supabase):
-        print("👍")
-        print("--- Pre-processing Finished Successfully ---")
-        sys.exit(0) # Exit with success code
+        print("👍 Pre-processing Finished Successfully")
+        sys.exit(0)
     else:
-        print("👎")
-        print("--- Pre-processing Failed ---")
-        sys.exit(1) # Exit with error code
+        print("👎 Pre-processing Failed")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
