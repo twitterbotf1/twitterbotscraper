@@ -64,12 +64,14 @@ def process_urls(urls: set) -> list:
     return processed_data
 
 def assign_timestamps_and_bot(processed_data: list) -> list:
-    """Assigns timestamps and bot name to the processed data."""
+    """Assigns timestamps, dates, and bot name to the processed data."""
     if not processed_data:
         return []
     
-    ist = pytz.timezone('Asia/Kolkata')
-    now = datetime.now(ist)
+    # 1. Changed timezone to UTC
+    utc = pytz.utc
+    now = datetime.now(utc)
+    
     count = len(processed_data)
     step = timedelta(hours=3) / (count - 1) if count > 1 else timedelta(hours=0)
     
@@ -78,13 +80,16 @@ def assign_timestamps_and_bot(processed_data: list) -> list:
     final_payload = []
     for i, item in enumerate(processed_data):
         timestamp_dt = now + i * step
+        
+        # 2. Added separate 'date' field in "Month day year" format
+        item['date'] = timestamp_dt.strftime('%B %d %Y') 
+        
         # Format time to HH:MM AM/PM
         item['time'] = timestamp_dt.strftime('%I:%M %p')
         item['bot'] = 'formula'
         final_payload.append(item)
         
     return final_payload
-
 def add_links_to_db(supabase: Client, payload: list) -> int:
     """Adds the final payload to the 'to_process' table."""
     if not payload:
