@@ -1,8 +1,16 @@
 name: Manual Formula Scraper
 
 on:
-  workflow_dispatch:
-
+  schedule:
+    # Runs at 9:00 AM GMT/UTC
+    - cron: '0 9 * * *'
+    
+    # Runs at 1:00 PM GMT/UTC
+    - cron: '0 13 * * *'
+    
+    # Runs at 5:00 PM GMT/UTC
+    - cron: '0 17 * * *'
+    
 permissions:
   contents: write
 
