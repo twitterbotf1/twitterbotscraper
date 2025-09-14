@@ -53,9 +53,12 @@ https://it.motorsport.com/f1/news/live-report-f1-a-monza-torna-lolandese-volante
 https://it.motorsport.com/f1/news/presidenza-fia-ben-sulayem-annuncia-la-ricandidatura-puntando-su-sostenibilita-e-sviluppo/10758220
 https://it.motorsport.com/f1/news/report-f1-lamore-per-la-ferrari-supera-la-delusione-della-rossa/10757814
 https://racingnews365.com/cadillac-avoiding-critical-f1-risk-with-major-decision
+https://racingnews365.com/cadillac-reveal-valtteri-bottas-and-sergio-perez-spark-crucial-to-f1-success
+https://racingnews365.com/colton-herta-issued-firm-instruction-by-cadillac-ahead-of-f2-switch
 https://racingnews365.com/daniel-ricciardo-exit-declared-biggest-red-bull-mistake-in-last-10-years
 https://racingnews365.com/f1-ceo-delivers-red-bull-crucial-max-verstappen-advice
 https://racingnews365.com/fernando-alonso-issues-aston-martin-instruction-after-latest-frustrating-failure
+https://racingnews365.com/fia-provide-clarification-after-stunning-toto-wolff-claim
 https://racingnews365.com/former-key-max-verstappen-ally-reveals-critical-factor-in-call-on-red-bull-future
 https://racingnews365.com/fred-vasseur-warned-lewis-hamilton-could-cost-him-his-job
 https://racingnews365.com/honda-express-desire-for-max-verstappen-reunion-ahead-of-red-bull-exit
@@ -63,7 +66,6 @@ https://racingnews365.com/kimi-antonelli-receives-big-boy-warning-as-mercedes-ho
 https://racingnews365.com/lando-norris-and-oscar-piastri-handed-ruthless-title-battle-defence
 https://racingnews365.com/lando-norris-critics-accused-of-misjudgement-over-f1-title-fight-weakness
 https://racingnews365.com/lewis-hamilton-caught-in-vicious-f1-trap-worsening-ferrari-woes
-https://racingnews365.com/lewis-hamilton-finally-discloses-verdict-on-valtteri-bottas-cadillac-f1-move
 https://racingnews365.com/lewis-hamilton-makes-alien-claim-as-ferrari-problem-explained
 https://racingnews365.com/live---max-verstappen-gt-racing-debut-on-iconic-nordschleife
 https://racingnews365.com/mahindra-hungry-for-more-after-major-formula-e-resurgance-it-gives-us-appetite
@@ -76,6 +78,7 @@ https://racingnews365.com/max-verstappen-reacts-to-new-achievement-after-exhilar
 https://racingnews365.com/max-verstappen-stuns-at-nurburgring-as-williams-learn-carlos-sainz-fate---racingnews365-review
 https://racingnews365.com/max-verstappen-to-play-kingmaker-as-mclaren-dark-side-emerges
 https://racingnews365.com/max-verstappen-to-play-kingmaker-as-mclaren-dark-side-emerges-2
+https://racingnews365.com/mclaren-clarify-team-order-review-after-controversial-swap
 https://racingnews365.com/mclaren-handed-oscar-piastri-lando-norris-title-warning-its-going-to-boil-over
 https://racingnews365.com/mclaren-rivals-handed-stern-looks-cheap-warning-over-f1-tactic
 https://racingnews365.com/new-adventure-beckons-for-max-verstappen-after-impressive-baptism-of-fire
@@ -84,9 +87,8 @@ https://racingnews365.com/oscar-piastri-passes-max-verstappen-to-close-in-on-ult
 https://racingnews365.com/red-bull-and-ferrari-highlight-major-unknown-from-incredible-challenge-facing-f1
 https://racingnews365.com/red-bull-strength-identified-after-max-verstappen-dominates-without-any-trick
 https://racingnews365.com/sebastian-vettel-shatters-multiple-records-with-historic-f1-win
+https://racingnews365.com/toto-wolff-hit-with-unusual-taste-of-his-own-medicine-in-george-russell-talks
 https://racingnews365.com/toto-wolff-identifies-major-norris-piastri-difference-from-hamilton-rosberg-feud
-https://racingnews365.com/verstappen-secures-nordschleife-licence-after-successful-weekend-test
-https://racingnews365.com/which-iconic-race-should-max-verstappen-consider-entering
 https://the-race.com/formula-1/audi-signs-big-partner-its-chief-rival-brought-back-to-f1
 https://the-race.com/formula-1/carlos-sainz-ollie-bearman-clash-exposes-glaring-flaw-in-f1-racing-rules
 https://the-race.com/formula-1/courageous-but-tricky-f2-drivers-what-to-expect-from-herta-switch
@@ -148,7 +150,6 @@ https://www.autosport.com/f1/news/f1-title-battle-point-situations/10758732
 https://www.autosport.com/f1/news/fia-overturns-sainzs-f1-dutch-gp-penalty-after-williams-protest/10759132
 https://www.autosport.com/f1/news/hamilton-vs-vasseur-whos-right/10757827
 https://www.autosport.com/f1/news/how-monza-brought-out-ferraris-fundamental-limitations-with-its-2025-f1-car/10758214
-https://www.autosport.com/f1/news/how-prost-shaped-the-way-wolff-manages-mercedes-f1-drivers/10758227
 https://www.autosport.com/f1/news/how-the-incredibly-tight-f1-2025-is-told-through-ghost-cars/10759038
 https://www.autosport.com/f1/news/ja-on-f1-podcast-who-will-be-the-first-team-post-mclaren-to-win-the-f1-title/10758331
 https://www.autosport.com/f1/news/marko-details-improvements-at-red-bull-since-mekies-became-f1-boss/10758845
@@ -220,13 +221,13 @@ https://www.bbc.co.uk/sport/formula1/articles/cz60q98v76eo
 https://www.f1oversteer.com/news/1-5bn-valued-f1-team-are-now-most-vulnerable-to-cadillac-staff-raid-due-to-cost-cap-loophole
 https://www.f1oversteer.com/news/david-coulthard-warns-mclaren-of-lando-norris-and-oscar-piastri-bust-up-after-monza-team-orders
 https://www.f1oversteer.com/news/ferrari-engineers-now-unsure-2025-f1-car-solution-has-helped-lewis-hamilton-and-charles-leclerc
+https://www.f1oversteer.com/news/gabriel-bortoleto-doing-something-behind-the-scenes-sauber-chief-needs-to-have-a-word-with-him-about
 https://www.f1oversteer.com/news/george-russell-snubs-ayrton-sennas-hero-as-he-names-his-mount-rushmore-of-british-f1-drivers
 https://www.f1oversteer.com/news/lewis-hamilton-had-a-tongue-in-cheek-complaint-about-ferrari-at-monza-if-he-had-finished-on-the-podium
 https://www.f1oversteer.com/news/max-verstappen-shares-why-he-wouldnt-drive-an-f1-car-at-the-nordschleife-after-perfect-gt3-debut
 https://www.f1oversteer.com/news/max-verstappens-nurburgring-instructor-reveals-how-the-red-bull-star-impressed-him-during-gt4-debut
 https://www.f1oversteer.com/news/ralf-schumacher-says-key-aston-martin-partners-hold-a-problematic-grudge-against-fernando-alonso
 https://www.f1oversteer.com/news/ted-kravitz-reveals-why-reluctant-genius-martin-brundle-never-wanted-to-be-an-f1-commentator-at-first
-https://www.f1oversteer.com/news/very-reliable-source-shares-just-how-far-off-the-pace-red-bulls-2026-engine-is-likely-to-be
 https://www.f1technical.net/features/23505
 https://www.f1technical.net/features/23634
 https://www.f1technical.net/news/27143
@@ -234,6 +235,7 @@ https://www.f1technical.net/news/27389
 https://www.f1technical.net/news/27620
 https://www.f1technical.net/news/27636
 https://www.f1technical.net/news/27644
+https://www.f1technical.net/news/27657
 https://www.f1technical.net/news/27728
 https://www.f1technical.net/news/27730
 https://www.f1technical.net/news/27731
@@ -241,7 +243,6 @@ https://www.f1technical.net/news/27732
 https://www.f1technical.net/news/27736
 https://www.f1technical.net/news/27739
 https://www.f1technical.net/news/27741
-https://www.f1technical.net/news/27751
 https://www.f1technical.net/news/27752
 https://www.f1technical.net/news/27754
 https://www.f1technical.net/news/27755
@@ -373,6 +374,7 @@ https://www.planetf1.com/features/adrian-newey-fernando-alonso-secret-private-ta
 https://www.planetf1.com/features/f1-data-max-verstappen-italian-gp-victory-monza
 https://www.planetf1.com/features/f1-penalty-points-drivers
 https://www.planetf1.com/features/max-verstappen-f1-dominance-compared
+https://www.planetf1.com/features/max-verstappen-nurburgring-licence-officials
 https://www.planetf1.com/news/adrian-newey-mclaren-mcl39-investigation-motive
 https://www.planetf1.com/news/bobby-epstein-cadillac-not-last-prediction-f1-2026
 https://www.planetf1.com/news/bobby-epstein-f1-sprint-races-not-driving-ticket-sales-more-value-grand-prix-weekend
@@ -393,6 +395,7 @@ https://www.planetf1.com/news/former-ferrari-chief-criticises-lack-of-leadership
 https://www.planetf1.com/news/franco-colapinto-reaction-difficult-alpine-f1-period
 https://www.planetf1.com/news/george-russell-max-verstappen-mercedes-exit-clause-nico-rosberg-response
 https://www.planetf1.com/news/helmut-marko-everything-is-possible-red-bull-after-italian-gp-changes
+https://www.planetf1.com/news/isack-hadjar-to-red-bull-this-year-rosberg-warns-him-to-say-no-way
 https://www.planetf1.com/news/johnny-herbert-sure-lando-norris-booed-italian-grand-prix-papaya-rules
 https://www.planetf1.com/news/lando-norris-mclaren-papaya-rules-over-mark-lane
 https://www.planetf1.com/news/lewis-hamilton-ferrari-documents-neil-martin
@@ -404,12 +407,10 @@ https://www.planetf1.com/news/max-verstappen-first-words-nordschleife-permit-rul
 https://www.planetf1.com/news/max-verstappen-nurburgring-gt4-qualifying
 https://www.planetf1.com/news/max-verstappen-nurburgring-gt4-report
 https://www.planetf1.com/news/max-verstappen-nurburgring-race-attendance
-https://www.planetf1.com/news/max-verstappen-to-ferrari-plea-eddie-irvine-lewis-hamilton-f1-ranking-ignored
 https://www.planetf1.com/news/max-verstappen-visit-ford-red-bull-powertrains-milton-keynes
 https://www.planetf1.com/news/mclaren-lando-norris-oscar-piastri-theories-addressed
 https://www.planetf1.com/news/mclaren-mcl39-red-bull-rb21-f1-2025-design-fundamental
 https://www.planetf1.com/news/natalie-pinkham-sky-f1-neck-surgery
-https://www.planetf1.com/news/nico-rosberg-david-croft-laurent-mekies-red-bull-impact-monza-versus-christian-horner
 https://www.planetf1.com/news/nikolas-tombazis-exclusive-f1-v8-power-unit-meeting-postponed-explained
 https://www.planetf1.com/news/nikolas-tombazis-fia-exclusive-400kmh-wont-happen-under-new-f1-2026-regulations
 https://www.planetf1.com/news/nurburgring-entry-list-yet-feature-max-verstappen-porsche-race-rumours-grow
