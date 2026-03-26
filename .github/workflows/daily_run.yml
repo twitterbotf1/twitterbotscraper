@@ -2,7 +2,7 @@ name: Twitter Bot Run
 
 on:
   schedule:
-    - cron: '30 3,13 * * *'
+    - cron: '30 3,13 * * *' # 9:00 AM & 7:00 PM IST
   workflow_dispatch:
 
 jobs:
@@ -13,6 +13,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install beautifulsoup4 cloudscraper google-generativeai playwright requests trafilatura
+          playwright install chromium
 
       - name: Create key file
         run: echo "${{ secrets.API_KEY_DATA }}" > code/key.txt
@@ -27,12 +37,12 @@ jobs:
           python code/step5.py
 
       - name: Remove key before commit
-        run: rm code/key.txt
+        run: rm -f code/key.txt
 
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Update bot data" || echo "No changes to commit"
+          git commit -m "Update bot data [skip ci]" || echo "No changes to commit"
           git push
