@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install beautifulsoup4 cloudscraper google-generativeai playwright requests trafilatura
+          pip install beautifulsoup4 cloudscraper google-generativeai google-genai playwright requests trafilatura
           playwright install chromium
 
       - name: Create key file
