@@ -1,0 +1,38 @@
+name: Twitter Bot Run
+
+on:
+  schedule:
+    - cron: '30 3,13 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create key file
+        run: echo "${{ secrets.API_KEY_DATA }}" > code/key.txt
+
+      - name: Run scripts
+        run: |
+          python code/step0.py
+          python code/step1.py
+          python code/step2.py
+          python code/step3.py
+          python code/step4.py
+          python code/step5.py
+
+      - name: Remove key before commit
+        run: rm code/key.txt
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "Update bot data" || echo "No changes to commit"
+          git push
