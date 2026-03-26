@@ -6,8 +6,9 @@ import trafilatura
 from playwright.sync_api import sync_playwright
 
 # File paths
-INPUT_FILE = "/workspaces/twitterbotscraper/code/spicy_news.json"
-OUTPUT_FILE = "/workspaces/twitterbotscraper/code/spicy_news_enriched.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_FILE = os.path.join(BASE_DIR, "spicy_news.json")
+OUTPUT_FILE = os.path.join(BASE_DIR, "spicy_news_enriched.json")
 
 def extract_with_fast_method(url):
     """Stage 1: Attempt to get content using cloudscraper and trafilatura."""
