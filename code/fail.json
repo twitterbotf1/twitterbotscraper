@@ -1,26 +1,32 @@
 [
     {
-        "id": "aa6b3b28",
-        "url": "https://www.f1oversteer.com/news/max-verstappen-showed-why-he-should-not-be-compared-to-ayrton-senna-with-japanese-gp-journalist-saga",
+        "id": "e6fc1d1a",
+        "url": "https://www.f1oversteer.com/news/kimi-antonelli-tops-japanese-grand-prix-fp3-after-lando-norris-suffers-another-mclaren-issue",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/max-verstappen-showed-why-he-should-not-be-compared-to-ayrton-senna-with-japanese-gp-journalist-saga"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/kimi-antonelli-tops-japanese-grand-prix-fp3-after-lando-norris-suffers-another-mclaren-issue"
     },
     {
-        "id": "6e1811f7",
-        "url": "https://www.f1oversteer.com/news/lando-norris-gave-mclaren-an-encouraging-japanese-gp-boost-above-oscar-piastri-setting-fp2-pace",
+        "id": "e64c5ca4",
+        "url": "https://www.f1oversteer.com/news/david-coulthard-praises-the-fias-decision-to-reduce-energy-management-in-qualifying-at-suzuka",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/lando-norris-gave-mclaren-an-encouraging-japanese-gp-boost-above-oscar-piastri-setting-fp2-pace"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/david-coulthard-praises-the-fias-decision-to-reduce-energy-management-in-qualifying-at-suzuka"
     },
     {
-        "id": "e855c72e",
-        "url": "https://www.f1oversteer.com/news/karun-chandhok-says-ferrari-must-force-mercedes-into-using-the-battery-where-they-dont-want-to",
+        "id": "1e26feb7",
+        "url": "https://www.f1oversteer.com/news/lando-norris-now-on-the-cusp-of-a-grid-penalty-as-mclaren-face-more-battery-issues-at-japanese-gp",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/karun-chandhok-says-ferrari-must-force-mercedes-into-using-the-battery-where-they-dont-want-to"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/lando-norris-now-on-the-cusp-of-a-grid-penalty-as-mclaren-face-more-battery-issues-at-japanese-gp"
     },
     {
-        "id": "f5084031",
-        "url": "https://www.f1oversteer.com/news/liam-lawson-just-proved-red-bull-are-not-a-happy-camp-at-japanese-grand-prix-says-karun-chandhok",
+        "id": "72a6750b",
+        "url": "https://www.f1oversteer.com/news/fans-declare-this-isnt-f1-after-seeing-max-verstappen-lose-31mph-from-super-clipping-at-suzuka",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/liam-lawson-just-proved-red-bull-are-not-a-happy-camp-at-japanese-grand-prix-says-karun-chandhok"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/fans-declare-this-isnt-f1-after-seeing-max-verstappen-lose-31mph-from-super-clipping-at-suzuka"
+    },
+    {
+        "id": "e2af89e9",
+        "url": "https://www.f1oversteer.com/news/timo-glock-says-max-verstappens-hands-are-tied-due-to-major-red-bull-rb22-issues-at-japanese-gp",
+        "domain": "f1oversteer.com",
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/timo-glock-says-max-verstappens-hands-are-tied-due-to-major-red-bull-rb22-issues-at-japanese-gp"
     }
 ]
