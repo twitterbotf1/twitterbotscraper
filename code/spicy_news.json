@@ -1,72 +1,65 @@
 [
     {
-        "id": "beb6057b",
-        "url": "https://www.motorsport.com/f1/news/lewis-hamilton-fears-ferrari-regression-in-f1-pecking-order/10808907",
+        "id": "f209d913",
+        "url": "https://www.formula1.com/en/latest/article/livestream-watch-qualifying-from-round-2-of-the-2026-f1-sim-racing-world.2MXAiJLLRYGvSSg9VLyuAL",
+        "domain": "formula1.com",
+        "title": "Round 2 Qualifying of the F1 Sim Racing World Championship",
+        "hero_image": "https://media.formula1.com/image/upload/c_lfill,w_2048/q_auto/v1740000001/fom-website/2026/F1%20Sim%20Racing%20World%20Championship/maxresdefault%20(1).webp"
+    },
+    {
+        "id": "fa3f24c5",
+        "url": "https://www.formula1.com/en/latest/article/watch-ride-onboard-with-antonelli-for-his-superb-pole-lap-in-japan.6HlF0OG6Djv9GpakCtWw6i",
+        "domain": "formula1.com",
+        "title": "Ride onboard with Antonelli for his superb pole lap in Japan",
+        "hero_image": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/95cda9bd-79a3-4db3-90f9-6fa576d9a19c/fbf0fdc1-7786-43b6-939d-a814197d3536/640x360/match/image.jpg"
+    },
+    {
+        "id": "312f7c1c",
+        "url": "https://www.motorsport.com/f1/news/honda-engine-vibrations-curiously-vanish-then-reappear-on-aston-martin-f1-car/10808960",
         "domain": "motorsport.com",
-        "title": "Lewis Hamilton fears Ferrari regression in F1 pecking order",
-        "hero_image": "https://cdn-1.motorsport.com/images/amp/24Qe7rdY/s6/lewis-hamilton-ferrari.jpg"
+        "title": "Honda engine vibrations curiously vanish, then reappear, on Aston Martin F1 car",
+        "hero_image": "https://cdn-6.motorsport.com/images/amp/0JXw7LQY/s6/lance-stroll-aston-martin-raci.jpg"
     },
     {
-        "id": "2c1668af",
-        "url": "https://www.autosport.com/f1/news/why-honda-cant-solve-the-vibration-issues-alone-and-needs-help-from-aston-martin/10808892",
+        "id": "1bb1849c",
+        "url": "https://www.autosport.com/f1/news/whats-going-wrong-at-red-bull-as-it-regresses-into-f1-midfield/10809012",
         "domain": "autosport.com",
-        "title": "Why Honda can\u2019t solve the vibration issues alone and needs help from Aston Martin",
-        "hero_image": "https://cdn-3.motorsport.com/images/amp/0qgPmG4Y/s6/fernando-alonso-aston-martin-r.jpg"
+        "title": "What's going wrong at Red Bull as it drops into F1 midfield?",
+        "hero_image": "https://cdn-5.motorsport.com/images/amp/27NQ8zm0/s6/max-verstappen-red-bull-racing.jpg"
     },
     {
-        "id": "d6d1093b",
-        "url": "https://www.bbc.co.uk/sport/formula1/articles/cn78vxm44k1o",
-        "domain": "bbc.co.uk",
-        "title": "Japanese Grand Prix: Max Verstappen has 'a lot to figure out' after qualifying 11th at Suzuka",
-        "hero_image": "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/dc46/live/9a22b8a0-2a90-11f1-b297-95b0a0a8331e.jpg"
-    },
-    {
-        "id": "7c3c8493",
-        "url": "https://the-race.com/formula-1/no-confidence-bleeding-laptime-red-bull-issues-brutally-exposed",
+        "id": "5084321d",
+        "url": "https://the-race.com/formula-1/max-verstappen-early-f1-exit-realistic-for-first-time",
         "domain": "the-race.com",
-        "title": "'No confidence', 'bleeding laptime' - Red Bull issues brutally exposed",
-        "hero_image": "https://www.the-race.com/content/images/size/w1200/2026/03/SI202603280293.jpg"
+        "title": "Verstappen's surprise admission he must 'figure out' F1 future",
+        "hero_image": "https://www.the-race.com/content/images/size/w1200/2026/03/SI202603280252.jpg"
     },
     {
-        "id": "799ebe08",
-        "url": "https://www.planetf1.com/news/charles-leclerc-f1-qualifying-rules-suzuka-quote-explained",
+        "id": "29abd10e",
+        "url": "https://www.planetf1.com/news/winners-and-losers-from-2026-japanese-grand-prix-qualifying",
         "domain": "planetf1.com",
-        "title": "\u2018It\u2019s a f**king joke\u2019: Charles Leclerc erupts over F1 qualifying rules",
-        "hero_image": "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2026%2F03%2F28091649%2Fferrari-charles-leclerc-2026-japanese-grand-prix2.jpg"
+        "title": "Kimi Antonelli leads Japan qualifying winners as Max Verstappen headlines losers list",
+        "hero_image": "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2026%2F03%2F26073116%2Fred-bull-max-verstappen-2026-japanese-grand-prix.jpg"
     },
     {
-        "id": "349a4547",
-        "url": "https://www.planetf1.com/news/slug-jonathan-wheatley-exit-mattia-binotto-audi-f1-surprise-restructure",
+        "id": "f157f598",
+        "url": "https://www.planetf1.com/news/winners-and-losers-from-2026-japanese-grand-prix-qualifying#viafoura-conversations-id",
         "domain": "planetf1.com",
-        "title": "Shock Audi exit: Mattia Binotto reveals why Jonathan Wheatley suddenly left role",
-        "hero_image": "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2026%2F03%2F20121928%2Fjonathan-wheatley-audi-f1-2026.jpg"
+        "title": "Kimi Antonelli leads Japan qualifying winners as Max Verstappen headlines losers list",
+        "hero_image": "https://images.ps-aws.com/c?url=https%3A%2F%2Fd3cm515ijfiu6w.cloudfront.net%2Fwp-content%2Fuploads%2F2026%2F03%2F26073116%2Fred-bull-max-verstappen-2026-japanese-grand-prix.jpg"
     },
     {
-        "id": "f617f191",
-        "url": "https://racingnews365.com/lando-norris-facing-major-disadvantage-after-latest-mclaren-problems",
+        "id": "fe2eceda",
+        "url": "https://racingnews365.com/max-verstappen-explains-drastic-f1-journalist-action-there-was-intent",
         "domain": "racingnews365.com",
-        "title": "Lando Norris facing major disadvantage after latest McLaren problems",
-        "hero_image": "https://cdn.racingnews365.com/2026/Norris/XPB_1404024_HiRes.jpg?v=1774682214&width=1800&height=945&quality=75&crop=5472%2C2873%2C0%2C387"
+        "title": "Max Verstappen explains drastic action against journalist",
+        "hero_image": "https://cdn.racingnews365.com/2026/Verstappen/SI202603280034.jpg?v=1774663345&width=1800&height=945&quality=75&crop=3840%2C2016%2C0%2C280"
     },
     {
-        "id": "ec756605",
-        "url": "https://racingnews365.com/charles-leclerc-lashes-out-at-f1-in-team-radio-fury",
+        "id": "7b63f890",
+        "url": "https://racingnews365.com/furious-charles-leclerc-blasts-f1-as-max-verstappen-hits-new-low",
         "domain": "racingnews365.com",
-        "title": "Charles Leclerc lashes out at F1 in team radio fury: 'It's a fucking joke!'",
-        "hero_image": "https://cdn.racingnews365.com/2026/Leclerc/Leclerc-FP2-Australia_2026-03-06-053136_tuyz.jpg?v=1772775098&width=1800&height=945&quality=75&crop=5185%2C2723%2C0%2C369"
-    },
-    {
-        "id": "49a50fca",
-        "url": "https://www.skysports.com/f1/news/12433/13525370/japanese-gp-max-verstappen-beyond-frustrated-after-shock-q2-exit-for-red-bull-driver-in-qualifying-at-suzuka",
-        "domain": "skysports.com",
-        "title": "Japanese GP: Max Verstappen 'beyond frustrated' after shock Q2 exit for Red Bull driver in qualifying at Suzuka",
-        "hero_image": "https://e0.365dm.com/26/03/1600x900/skysports-f1-max-verstappen_7205289.jpg?20260328090353"
-    },
-    {
-        "id": "94d80710",
-        "url": "https://www.skysports.com/f1/news/12433/13525371/george-russell-says-he-is-handcuffed-for-japanese-gp-after-failed-set-up-change-allowed-mercedes-team-mate-kimi-antonelli-to-take-pole",
-        "domain": "skysports.com",
-        "title": "George Russell says he is 'handcuffed' for Japanese GP after failed set-up change allowed Mercedes team-mate Kimi Antonelli to take pole",
-        "hero_image": "https://e0.365dm.com/26/03/1600x900/skysports-george-russell-mercedes_7205303.jpg?20260328091957"
+        "title": "Furious Charles Leclerc blasts F1 as Max Verstappen hits new low",
+        "hero_image": "https://cdn.racingnews365.com/2026/thumbnail-japan-saturday-2.jpg?v=1774697502&width=1800&height=945&quality=75&crop=1920%2C1008%2C0%2C36"
     }
 ]
