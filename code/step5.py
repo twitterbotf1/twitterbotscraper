@@ -61,9 +61,7 @@ def process_batch(client, batch_data):
             )
         )
         
-        # Clean the response text to ensure it is valid JSON
         text = response.text.strip()
-        # Remove markdown code blocks if the AI accidentally adds them
         if text.startswith("```"):
             text = re.sub(r'^```json\s*|\s*```$', '', text, flags=re.MULTILINE)
         
@@ -103,17 +101,28 @@ def main():
         if i + batch_size < len(valid_data):
             time.sleep(5)
 
+    # --- MODIFIED SECTION: Cleaning the output ---
     final_output = []
+    # Define keys we want to REMOVE
+    keys_to_remove = {"id", "title", "content"}
+
     for item in valid_data:
         item_id = item["id"]
         if item_id in all_tweets:
-            item["generated_tweets"] = all_tweets[item_id]
-            final_output.append(item)
+            # Create a new dictionary excluding the unwanted keys
+            cleaned_item = {k: v for k, v in item.items() if k not in keys_to_remove}
+            
+            # Add the newly generated tweets
+            cleaned_item["generated_tweets"] = all_tweets[item_id]
+            
+            final_output.append(cleaned_item)
+    # --- END OF MODIFIED SECTION ---
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(final_output, f, indent=4, ensure_ascii=False)
 
-    print(f"✅ Finished. Generated tweets for {len(final_output)} articles in {OUTPUT_JSON}")
+    print(f"✅ Finished. Output saved to {OUTPUT_JSON}")
+    print(f"Fields removed: id, title, content. Fields kept: {list(final_output[0].keys()) if final_output else 'N/A'}")
 
 if __name__ == "__main__":
     main()
