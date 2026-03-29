@@ -1,117 +1,217 @@
 [
     {
-        "id": "94b43a37",
-        "url": "https://www.formula1.com/en/latest/article/official-grid-who-starts-where-for-the-japanese-grand-prix.6b4ys9RVRgRCcfXsQEOl1Q",
+        "id": "0834cf3c",
+        "url": "https://www.formula1.com/en/latest/article/livestream-catch-qualifying-from-round-3-of-the-2026-f1-sim-racing-world.6jHPyIJSS5negY1AdEvl9f",
         "domain": "formula1.com"
     },
     {
-        "id": "41053e59",
-        "url": "https://www.formula1.com/en/latest/article/live-coverage-formula-1-aramco-japanese-grand-prix-2026.7ou2fj9YWzy1Ux5lXOZzf9",
+        "id": "7baf7c27",
+        "url": "https://www.formula1.com/en/latest/article/what-the-teams-said-race-day-in-japan-2026.7ljwEx0ZL2qA0lytKAwXLI",
         "domain": "formula1.com"
     },
     {
-        "id": "153ca82f",
-        "url": "https://www.formula1.com/en/latest/article/betting-mistakes-to-avoid-when-watching-the-japanese-grand-prix.VIlnUKzVMChQKZAmONaia",
+        "id": "24d0fa00",
+        "url": "https://www.formula1.com/en/latest/article/verstappen-admits-red-bull-are-in-the-midfield-battle-after-incredibly-tough.3KbArfIDhC9LnHBif1Xp83",
         "domain": "formula1.com"
     },
     {
-        "id": "3b68f53f",
-        "url": "https://www.formula1.com/en/latest/article/our-final-japanese-grand-prix-betting-predictions-before-lights-out-in.5ZSJkzZatt3iVcXcloUTWk",
+        "id": "d8000b29",
+        "url": "https://www.formula1.com/en/latest/article/we-got-a-little-unlucky-leclerc-laments-safety-car-timing-after-p3-finish-in.35dalwAfMJJxnnOnBZyvIC",
         "domain": "formula1.com"
     },
     {
-        "id": "439568e0",
-        "url": "https://www.motorsport.com/f1/news/f1-japanese-gp-live-commentary-and-updates-race-day-10809280/10809280",
+        "id": "503c6a27",
+        "url": "https://www.formula1.com/en/latest/article/antonelli-takes-championship-lead-after-surging-to-victory-in-japan-from.4EC4uZc29IUEO2iE5nKpUp",
+        "domain": "formula1.com"
+    },
+    {
+        "id": "02d247ce",
+        "url": "https://www.motorsport.com/f1/news/f1-japanese-gp-race-report/10809270",
         "domain": "motorsport.com"
     },
     {
-        "id": "d257d2d6",
-        "url": "https://www.motorsport.com/f1/news/max-verstappen-to-make-life-decisions-as-his-discontent-with-f1-grows/10809008",
+        "id": "7c0ea29f",
+        "url": "https://www.motorsport.com/f1/news/at-the-mercy-of-the-power-unit-lando-norris-and-max-verstappens-f1-2026-complaints-continue/10809496",
         "domain": "motorsport.com"
     },
     {
-        "id": "6a1a5236",
-        "url": "https://www.motorsport.com/f1/news/cadillac-outqualifies-aston-martin-at-suzuka-despite-losing-up-to-05s-to-technical-issue/10809034",
+        "id": "4deebba2",
+        "url": "https://www.motorsport.com/f1/news/red-bull-now-behind-alpine-in-2026-f1-championship-heres-how-it-happened/10809414",
         "domain": "motorsport.com"
     },
     {
-        "id": "38ed890b",
-        "url": "https://www.motorsport.com/f1/news/scott-speed-reveals-his-red-bull-f1-regrets-and-what-hed-do-differently/10808800",
-        "domain": "motorsport.com"
-    },
-    {
-        "id": "e694c3c9",
-        "url": "https://www.motorsport.com/f1/news/the-starting-grid-for-the-2026-japanese-f1-grand-prix/10808871",
-        "domain": "motorsport.com"
-    },
-    {
-        "id": "9dce8b20",
-        "url": "https://www.autosport.com/f1/news/f1-japanese-gp-live-commentary-and-updates-race-day-10809284/10809284",
+        "id": "38ab5e49",
+        "url": "https://www.autosport.com/f1/news/how-bearmans-50g-crash-saved-antonellis-bacon-in-japan/10809504",
         "domain": "autosport.com"
     },
     {
-        "id": "df401bd0",
-        "url": "https://www.bbc.co.uk/sport/formula1/live/cevn4ylex3dt",
+        "id": "38ba59c3",
+        "url": "https://www.autosport.com/f1/news/fia-responds-to-dramatic-bearman-crash-in-f1-japanese-gp/10809477",
+        "domain": "autosport.com"
+    },
+    {
+        "id": "9fa0ce3a",
+        "url": "https://www.autosport.com/f1/news/at-the-mercy-of-the-power-unit-lando-norris-and-max-verstappens-f1-2026-complaints-continue/10809501",
+        "domain": "autosport.com"
+    },
+    {
+        "id": "b39fe16b",
+        "url": "https://www.autosport.com/f1/news/f1-japanese-gp-safety-car-helps-kimi-antonelli-to-victory/10809306",
+        "domain": "autosport.com"
+    },
+    {
+        "id": "c110b57a",
+        "url": "https://www.autosport.com/f1/news/red-bull-f1-car-so-undriveable-it-was-dangerous-at-suzuka-isack-hadjar/10809408",
+        "domain": "autosport.com"
+    },
+    {
+        "id": "a51a612c",
+        "url": "https://www.bbc.co.uk/sport/formula1/articles/cwykgvjxpwdo",
         "domain": "bbc.co.uk"
     },
     {
-        "id": "009257b8",
-        "url": "https://the-race.com/formula-1/start-of-f1-2026-japanese-gp-delayed",
+        "id": "3d82c086",
+        "url": "https://www.bbc.co.uk/sport/formula1/articles/cwykgvjxpwdo#comments",
+        "domain": "bbc.co.uk"
+    },
+    {
+        "id": "f63fc032",
+        "url": "https://www.bbc.co.uk/sport/formula1/articles/cx2695dkjzdo",
+        "domain": "bbc.co.uk"
+    },
+    {
+        "id": "6f39d493",
+        "url": "https://www.bbc.co.uk/sport/formula1/articles/cx2695dkjzdo#comments",
+        "domain": "bbc.co.uk"
+    },
+    {
+        "id": "44af815e",
+        "url": "https://the-race.com/formula-1/2026-first-scary-crash-kimi-antonelli-win-our-verdict-on-f1s-japanese-gp",
         "domain": "the-race.com"
     },
     {
-        "id": "38953010",
-        "url": "https://the-race.com/formula-1/f1-2026-japanese-grand-prix-starting-grid",
+        "id": "a0e3c8f5",
+        "url": "https://the-race.com/formula-1/winners-and-losers-from-f1s-2026-japanese-grand-prix",
         "domain": "the-race.com"
     },
     {
-        "id": "d1ef2af8",
-        "url": "https://www.planetf1.com/news/f1-live-2026-japanese-grand-prix-race-updates",
+        "id": "0bbe38d2",
+        "url": "https://the-race.com/formula-1/could-piastri-have-won-japanese-gp-without-safety-car",
+        "domain": "the-race.com"
+    },
+    {
+        "id": "18e7e2b0",
+        "url": "https://the-race.com/formula-1/f1-must-listen-to-drivers-not-just-teams-over-safety-concerns-sainz",
+        "domain": "the-race.com"
+    },
+    {
+        "id": "9e7b77ad",
+        "url": "https://the-race.com/formula-1/fia-response-to-contribution-of-closing-speeds-in-bearman-crash",
+        "domain": "the-race.com"
+    },
+    {
+        "id": "3cfbbb01",
+        "url": "https://www.planetf1.com/features/japanese-gp-2026-driver-ratings-mclaren-bearman-alonso",
         "domain": "planetf1.com"
     },
     {
-        "id": "f0228112",
-        "url": "https://www.planetf1.com/news/f1-live-2026-japanese-grand-prix-race-updates#viafoura-conversations-id",
+        "id": "2b59a865",
+        "url": "https://www.planetf1.com/features/japanese-gp-2026-driver-ratings-mclaren-bearman-alonso#viafoura-conversations-id",
         "domain": "planetf1.com"
     },
     {
-        "id": "036fe1fd",
-        "url": "https://www.planetf1.com/news/f1-live-timing-2026-japanese-grand-prix",
+        "id": "d55e6cfe",
+        "url": "https://www.planetf1.com/news/fia-statement-2026-f1-rules-review-meetings-oliver-bearman-crash",
         "domain": "planetf1.com"
     },
     {
-        "id": "a180b5a0",
-        "url": "https://www.planetf1.com/news/f1-live-timing-2026-japanese-grand-prix#viafoura-conversations-id",
+        "id": "9be17eeb",
+        "url": "https://www.planetf1.com/news/fia-statement-2026-f1-rules-review-meetings-oliver-bearman-crash#viafoura-conversations-id",
         "domain": "planetf1.com"
     },
     {
-        "id": "e2f9006d",
-        "url": "https://racingnews365.com/f1-announce-delay-to-japanese-gp-race-start",
+        "id": "f29e178a",
+        "url": "https://www.planetf1.com/news/oliver-bearman-crash-f1-2026-backlash-driver-criticism",
+        "domain": "planetf1.com"
+    },
+    {
+        "id": "51558714",
+        "url": "https://racingnews365.com/fia-release-statement-after-huge-oliver-bearman-japanese-gp-crash",
         "domain": "racingnews365.com"
     },
     {
-        "id": "7ce4059d",
-        "url": "https://racingnews365.com/liam-lawson-blind-after-racing-bulls-f1-car-suffers-major-damage",
+        "id": "75de3c35",
+        "url": "https://racingnews365.com/f1-2026-team-mate-race-head-to-head",
         "domain": "racingnews365.com"
     },
     {
-        "id": "e5492286",
-        "url": "https://www.f1oversteer.com/news/charles-leclercs-japanese-gp-qualifying-data-clearly-shows-f1-need-to-make-further-rule-changes",
+        "id": "9fa1b3fe",
+        "url": "https://racingnews365.com/thieves-steal-12-tonnes-of-special-f1-merchandise",
+        "domain": "racingnews365.com"
+    },
+    {
+        "id": "54dc4efb",
+        "url": "https://www.skysports.com/f1/news/12433/13525698/japanese-gp-kimi-antonelli-wins-at-suzuka-to-take-world-championship-lead-from-mercedes-team-mate-george-russell",
+        "domain": "skysports.com"
+    },
+    {
+        "id": "339f004d",
+        "url": "https://www.skysports.com/f1/news/12040/13525809/max-verstappen-four-time-world-champion-says-he-is-considering-quitting-f1-at-end-of-2026-season-amid-discontent-with-cars",
+        "domain": "skysports.com"
+    },
+    {
+        "id": "aa8393ab",
+        "url": "https://www.skysports.com/f1/news/12040/13525781/george-russell-mercedes-driver-says-one-lap-of-difference-in-timing-of-japanese-gp-safety-car-would-have-seen-him-win-race",
+        "domain": "skysports.com"
+    },
+    {
+        "id": "b009f35f",
+        "url": "https://www.skysports.com/f1/news/12433/13525703/lewis-hamilton-ferrari-driver-bemoans-pretty-terrible-japanese-grand-prix-weekend-at-suzuka",
+        "domain": "skysports.com"
+    },
+    {
+        "id": "c58f85bc",
+        "url": "https://www.skysports.com/f1/news/12433/13525700/oliver-bearman-haas-driver-avoids-serious-injury-after-limping-away-from-heavy-japanese-gp-crash",
+        "domain": "skysports.com"
+    },
+    {
+        "id": "44a0c1e9",
+        "url": "https://www.f1oversteer.com/news/charles-leclerc-says-ferrari-need-to-improve-absolutely-everything-on-the-sf-26-over-april-break",
         "domain": "f1oversteer.com"
     },
     {
-        "id": "8b58894e",
-        "url": "https://www.f1oversteer.com/news/ferrari-fans-beg-please-dont-lie-after-hearing-fred-vasseurs-bold-claim-at-japanese-grand-prix",
+        "id": "f43c062c",
+        "url": "https://www.f1oversteer.com/news/ted-kravitz-says-george-russells-japanese-grand-prix-radio-didnt-go-down-well-at-mercedes",
         "domain": "f1oversteer.com"
     },
     {
-        "id": "1a202a3e",
-        "url": "https://www.f1oversteer.com/news/mercedes-should-be-fearful-of-oscar-piastri-as-japanese-grand-prix-data-shows-possible-mclaren-edge",
+        "id": "ce95bee7",
+        "url": "https://www.f1oversteer.com/news/andrea-stella-admits-mclaren-kept-lando-norris-on-the-back-foot-at-japanese-grand-prix",
         "domain": "f1oversteer.com"
     },
     {
-        "id": "a85174a1",
-        "url": "https://www.gazzetta.it/Formula-1/29-03-2026/f1-live-giappone-la-diretta-della-gara.shtml",
+        "id": "96a31c9c",
+        "url": "https://www.f1oversteer.com/news/when-is-the-next-f1-race-miami-grand-prix-schedule-after-bahrain-and-saudi-arabia-cancellations",
+        "domain": "f1oversteer.com"
+    },
+    {
+        "id": "4e08cceb",
+        "url": "https://www.gazzetta.it/Formula-1/storie/29-03-2026/kimi-antonelli-e-la-classifica-piloti-il-piu-giovane-primo-di-sempre/veloce-ma-non-in-partenza.shtml",
+        "domain": "gazzetta.it"
+    },
+    {
+        "id": "09299482",
+        "url": "https://www.gazzetta.it/motori/ferrari/29-03-2026/ferrari-leclerc-e-il-gp-del-giappone-le-reazioni-e-il-duello-con-hamilton.shtml",
+        "domain": "gazzetta.it"
+    },
+    {
+        "id": "e3e4c0b0",
+        "url": "https://www.gazzetta.it/Formula-1/29-03-2026/formula-1-antonelli-ora-sinner-vinca-a-miami.shtml",
+        "domain": "gazzetta.it"
+    },
+    {
+        "id": "16562614",
+        "url": "https://www.gazzetta.it/Formula-1/29-03-2026/f1-gp-giappone-le-pagelle-e-i-voti-della-gazzetta.shtml",
         "domain": "gazzetta.it"
     }
 ]

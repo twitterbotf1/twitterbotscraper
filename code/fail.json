@@ -1,20 +1,26 @@
 [
     {
-        "id": "e5492286",
-        "url": "https://www.f1oversteer.com/news/charles-leclercs-japanese-gp-qualifying-data-clearly-shows-f1-need-to-make-further-rule-changes",
+        "id": "44a0c1e9",
+        "url": "https://www.f1oversteer.com/news/charles-leclerc-says-ferrari-need-to-improve-absolutely-everything-on-the-sf-26-over-april-break",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/charles-leclercs-japanese-gp-qualifying-data-clearly-shows-f1-need-to-make-further-rule-changes"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/charles-leclerc-says-ferrari-need-to-improve-absolutely-everything-on-the-sf-26-over-april-break"
     },
     {
-        "id": "8b58894e",
-        "url": "https://www.f1oversteer.com/news/ferrari-fans-beg-please-dont-lie-after-hearing-fred-vasseurs-bold-claim-at-japanese-grand-prix",
+        "id": "f43c062c",
+        "url": "https://www.f1oversteer.com/news/ted-kravitz-says-george-russells-japanese-grand-prix-radio-didnt-go-down-well-at-mercedes",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/ferrari-fans-beg-please-dont-lie-after-hearing-fred-vasseurs-bold-claim-at-japanese-grand-prix"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/ted-kravitz-says-george-russells-japanese-grand-prix-radio-didnt-go-down-well-at-mercedes"
     },
     {
-        "id": "1a202a3e",
-        "url": "https://www.f1oversteer.com/news/mercedes-should-be-fearful-of-oscar-piastri-as-japanese-grand-prix-data-shows-possible-mclaren-edge",
+        "id": "ce95bee7",
+        "url": "https://www.f1oversteer.com/news/andrea-stella-admits-mclaren-kept-lando-norris-on-the-back-foot-at-japanese-grand-prix",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/mercedes-should-be-fearful-of-oscar-piastri-as-japanese-grand-prix-data-shows-possible-mclaren-edge"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/andrea-stella-admits-mclaren-kept-lando-norris-on-the-back-foot-at-japanese-grand-prix"
+    },
+    {
+        "id": "96a31c9c",
+        "url": "https://www.f1oversteer.com/news/when-is-the-next-f1-race-miami-grand-prix-schedule-after-bahrain-and-saudi-arabia-cancellations",
+        "domain": "f1oversteer.com",
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/when-is-the-next-f1-race-miami-grand-prix-schedule-after-bahrain-and-saudi-arabia-cancellations"
     }
 ]
