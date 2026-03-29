@@ -1,14 +1,20 @@
 [
     {
-        "id": "da48f274",
-        "url": "https://www.f1oversteer.com/news/arvid-lindblad-told-to-take-a-bow-after-destroying-liam-lawson-at-the-japanese-grand-prix",
+        "id": "e5492286",
+        "url": "https://www.f1oversteer.com/news/charles-leclercs-japanese-gp-qualifying-data-clearly-shows-f1-need-to-make-further-rule-changes",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/arvid-lindblad-told-to-take-a-bow-after-destroying-liam-lawson-at-the-japanese-grand-prix"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/charles-leclercs-japanese-gp-qualifying-data-clearly-shows-f1-need-to-make-further-rule-changes"
     },
     {
-        "id": "a4f49876",
-        "url": "https://www.f1oversteer.com/news/lando-norris-admits-hes-still-one-or-two-steps-behind-in-difficult-japanese-grand-prix-admission",
+        "id": "8b58894e",
+        "url": "https://www.f1oversteer.com/news/ferrari-fans-beg-please-dont-lie-after-hearing-fred-vasseurs-bold-claim-at-japanese-grand-prix",
         "domain": "f1oversteer.com",
-        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/lando-norris-admits-hes-still-one-or-two-steps-behind-in-difficult-japanese-grand-prix-admission"
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/ferrari-fans-beg-please-dont-lie-after-hearing-fred-vasseurs-bold-claim-at-japanese-grand-prix"
+    },
+    {
+        "id": "1a202a3e",
+        "url": "https://www.f1oversteer.com/news/mercedes-should-be-fearful-of-oscar-piastri-as-japanese-grand-prix-data-shows-possible-mclaren-edge",
+        "domain": "f1oversteer.com",
+        "error": "403 Client Error: Forbidden for url: https://www.f1oversteer.com/news/mercedes-should-be-fearful-of-oscar-piastri-as-japanese-grand-prix-data-shows-possible-mclaren-edge"
     }
 ]
