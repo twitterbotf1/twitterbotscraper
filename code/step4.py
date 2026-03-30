@@ -1,91 +1,103 @@
-import json
 import os
+import json
 import time
-import cloudscraper
-import trafilatura
-from playwright.sync_api import sync_playwright
+import re
+from google import genai
+from google.genai import types
 
-# File paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_FILE = os.path.join(BASE_DIR, "spicy_news.json")
-OUTPUT_FILE = os.path.join(BASE_DIR, "spicy_news_enriched.json")
+INPUT_JSON = os.path.join(BASE_DIR, "spicy_news.json")
+OUTPUT_JSON = os.path.join(BASE_DIR, "final_posts.json")
+KEY_PATH = os.path.join(BASE_DIR, "key.txt")
 
-def extract_with_fast_method(url):
-    """Stage 1: Attempt to get content using cloudscraper and trafilatura."""
-    try:
-        scraper = cloudscraper.create_scraper()
-        # Get HTML content bypassing simple Cloudflare/bot checks
-        response = scraper.get(url, timeout=15)
-        if response.status_code == 200:
-            # Extract clean text from HTML
-            content = trafilatura.extract(response.text)
-            return content
-    except Exception as e:
-        print(f"   - Fast method failed for {url}: {e}")
-    return None
+SYSTEM_PROMPT = """
+You are a chaotic, teenage F1 Twitter user whose only goal is to spread rage-bait, stir up drama, and create pure chaos in the #f1twt community.
 
-def extract_with_browser(url):
-    """Stage 2: Fallback to Playwright for JS-heavy or protected sites."""
+LOGIC SWITCH:
+1. IF the article is about Charles Leclerc:
+   - Persona: You are his fiercest soldier, ready to go to war for him. He is absolutely perfect and incapable of error. 
+   - Tone: Extremely defensive, aggressive, and obsessed.
+   - Team Stance: If Ferrari fails Charles, mock the team relentlessly. If Charles isn't mentioned, be indifferent to the team.
+
+2. IF the article is about Lewis Hamilton:
+   - Persona: Indifferent, neutral. Let him be.
+
+3. IF the article is about ANYONE ELSE (Red Bull, Max, McLaren, etc.) or specifically the FIA/FOM:
+   - Persona: A hateful, cynical contrarian. 
+   - Tone: Pure mockery, sarcasm, and vitriol. 
+   - Stance: Reject all positive results, find flaws in everything, and treat the FIA/FOM as pure evil. You are here to drag everyone down and trigger their fanbases.
+
+STRICT RULES:
+- NO CROSS-OVERS: If the article is not about Charles, do not mention him.
+- NO COMPARISONS: Stick strictly to the content of the current article. Do not compare to past races, past seasons, or other drivers unless explicitly mentioned in the text. Keep comparisons to an absolute minimum.
+- FORMAT: Must include ONLY these 3 hashtags: #formula1 #f1twt #f1.
+- EMOJIS: Use relevant emojis to maximize chaos.
+- NO other hashtags allowed.
+- LENGTH: Maximum 250 characters per tweet.
+- LANGUAGE: English.
+- OUTPUT: Return ONLY a raw JSON object mapping IDs to a list of 2 strings: {"id_xyz": ["tweet1", "tweet2"]}
+"""
+
+def get_api_key():
+    if not os.path.exists(KEY_PATH): return None
+    with open(KEY_PATH, "r") as f: return f.read().strip()
+
+def process_batch(client, batch_data):
+    input_payload = [{"id": item["id"], "title": item["title"], "content": item["content"]} for item in batch_data]
     try:
-        with sync_playwright() as p:
-            # Launch a headless browser
-            browser = p.chromium.launch(headless=True)
-            context = browser.new_context(
-                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+        response = client.models.generate_content(
+            model="gemini-2.5-flash-lite",
+            contents=json.dumps(input_payload),
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_PROMPT,
+                response_mime_type="application/json"
             )
-            page = context.new_page()
-            
-            # Navigate and wait for the page to load
-            page.goto(url, timeout=30000, wait_until="domcontentloaded")
-            # Give JS a small moment to run
-            time.sleep(2) 
-            
-            html = page.content()
-            browser.close()
-            
-            # Extract clean text from rendered HTML
-            return trafilatura.extract(html)
+        )
+        text = response.text.strip()
+        if text.startswith("```"):
+            text = re.sub(r'^```json\s*|\s*```$', '', text, flags=re.MULTILINE)
+        return json.loads(text)
     except Exception as e:
-        print(f"   - Browser method failed for {url}: {e}")
-    return None
+        print(f"🔴 AI Batch Error: {e}")
+        return {}
 
 def main():
-    if not os.path.exists(INPUT_FILE):
-        print(f"Input file not found: {INPUT_FILE}")
-        return
+    api_key = get_api_key()
+    if not api_key: return
+    client = genai.Client(api_key=api_key)
 
-    with open(INPUT_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    if not os.path.exists(INPUT_JSON): return
 
-    print(f"Starting processing for {len(data)} links...")
-    
-    enriched_data = []
+    with open(INPUT_JSON, "r", encoding="utf-8") as f:
+        valid_data = json.load(f)
 
-    for index, item in enumerate(data):
-        url = item.get("url")
-        print(f"[{index+1}/{len(data)}] Processing: {url}")
-        
-        # Step 1: Try Fast Scraper
-        content = extract_with_fast_method(url)
-        
-        # Step 2: If Stage 1 failed or returned empty, try Browser rendering
-        if not content or len(content.strip()) < 100:
-            print(f"   - Content empty or too short. Trying browser fallback...")
-            content = extract_with_browser(url)
-        
-        # Add content to our item (if found)
-        item["content"] = content if content else "COULD_NOT_EXTRACT"
-        
-        enriched_data.append(item)
-        
-        # Small delay to avoid aggressive rate-limiting
-        time.sleep(1)
+    if not valid_data: return
 
-    # Save the updated data
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(enriched_data, f, indent=4, ensure_ascii=False)
+    all_tweets = {}
+    batch_size = 5
+    for i in range(0, len(valid_data), batch_size):
+        batch = valid_data[i : i + batch_size]
+        print(f"Processing batch {i//batch_size + 1} ({len(batch)} items)...")
+        batch_results = process_batch(client, batch)
+        all_tweets.update(batch_results)
+        if i + batch_size < len(valid_data):
+            time.sleep(5)
 
-    print(f"\n✅ Processing complete. Results saved to: {OUTPUT_FILE}")
+    final_output =[]
+    keys_to_remove = {"id", "title", "content"}
+
+    for item in valid_data:
+        item_id = item["id"]
+        if item_id in all_tweets:
+            cleaned_item = {k: v for k, v in item.items() if k not in keys_to_remove}
+            generated = all_tweets[item_id]
+            cleaned_item["generated_tweets"] = [item["title"]] + generated
+            final_output.append(cleaned_item)
+
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(final_output, f, indent=4, ensure_ascii=False)
+
+    print(f"✅ Finished. Output saved to {OUTPUT_JSON}")
 
 if __name__ == "__main__":
     main()
