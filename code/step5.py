@@ -1,3 +1,4 @@
+# filename: /workspaces/twitterbotscraper/code/step4.py
 import os
 import json
 import time
@@ -19,26 +20,31 @@ def get_api_key():
         return f.read().strip()
 
 SYSTEM_PROMPT = """
-You are a specialized F1 commentator with a conditional 'Bias Switch'. 
-Your task is to write 3 distinct tweet variations for each provided article based STRICTLY on its content.
+You are a chaotic, teenage F1 Twitter user whose only goal is to spread rage-bait, stir up drama, and create pure chaos in the #f1twt community.
 
 LOGIC SWITCH:
-1. IF the article is about Ferrari, Charles Leclerc, or Lewis Hamilton:
-   - Tone: Loyal, supportive, and defensive. 
-   - Persona: You are their biggest fan.
+1. IF the article is about Charles Leclerc:
+   - Persona: You are his fiercest soldier, ready to go to war for him. He is absolutely perfect and incapable of error. 
+   - Tone: Extremely defensive, aggressive, and obsessed.
+   - Team Stance: If Ferrari fails Charles, mock the team relentlessly. If Charles isn't mentioned, be indifferent to the team.
 
-2. IF the article is about ANYONE ELSE (Red Bull, Max, Mercedes, Toto, McLaren, FIA, etc.):
-   - Tone: Biting sarcasm, satire, and mockery.
-   - Persona: You are a harsh critic.
+2. IF the article is about Lewis Hamilton:
+   - Persona: Indifferent, neutral. Let him be.
+
+3. IF the article is about ANYONE ELSE (Red Bull, Max, McLaren, etc.) or specifically the FIA/FOM:
+   - Persona: A hateful, cynical contrarian. 
+   - Tone: Pure mockery, sarcasm, and vitriol. 
+   - Stance: Reject all positive results, find flaws in everything, and treat the FIA/FOM as pure evil. You are here to drag everyone down and trigger their fanbases.
 
 STRICT RULES:
-- NO CROSS-OVERS: If an article is NOT about Ferrari/Leclerc/Hamilton, DO NOT mention them. Stay focused only on the subjects in the text.
+- NO CROSS-OVERS: If the article is not about Charles, do not mention him.
+- NO COMPARISONS: Stick strictly to the content of the current article. Do not compare to past races, past seasons, or other drivers unless explicitly mentioned in the text. Keep comparisons to an absolute minimum.
+- FORMAT: Must include ONLY these 3 hashtags: #formula1 #f1twt #f1.
+- EMOJIS: Use relevant emojis to maximize chaos.
+- NO other hashtags allowed.
 - LENGTH: Maximum 250 characters per tweet.
-- LANGUAGE: Always English.
-- OUTPUT: Return ONLY a raw JSON object mapping IDs to a list of 3 strings.
-
-Example Output:
-{"id_xyz": ["tweet1", "tweet2", "tweet3"]}
+- LANGUAGE: English.
+- OUTPUT: Return ONLY a raw JSON object mapping IDs to a list of 2 strings: {"id_xyz": ["tweet1", "tweet2"]}
 """
 
 def process_batch(client, batch_data):
@@ -101,28 +107,24 @@ def main():
         if i + batch_size < len(valid_data):
             time.sleep(5)
 
-    # --- MODIFIED SECTION: Cleaning the output ---
     final_output = []
-    # Define keys we want to REMOVE
     keys_to_remove = {"id", "title", "content"}
 
     for item in valid_data:
         item_id = item["id"]
         if item_id in all_tweets:
-            # Create a new dictionary excluding the unwanted keys
             cleaned_item = {k: v for k, v in item.items() if k not in keys_to_remove}
             
-            # Add the newly generated tweets
-            cleaned_item["generated_tweets"] = all_tweets[item_id]
+            # Combine title + generated tweets
+            generated = all_tweets[item_id]
+            cleaned_item["generated_tweets"] = [item["title"]] + generated
             
             final_output.append(cleaned_item)
-    # --- END OF MODIFIED SECTION ---
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(final_output, f, indent=4, ensure_ascii=False)
 
     print(f"✅ Finished. Output saved to {OUTPUT_JSON}")
-    print(f"Fields removed: id, title, content. Fields kept: {list(final_output[0].keys()) if final_output else 'N/A'}")
 
 if __name__ == "__main__":
     main()
