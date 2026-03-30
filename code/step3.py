@@ -1,11 +1,10 @@
-# filename: /workspaces/twitterbotscraper/code/step3.py
 import os
 import json
 from google import genai
 from google.genai import types
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_JSON = os.path.join(BASE_DIR, "head.json")
+INPUT_JSON = os.path.join(BASE_DIR, "final_articles.json")
 OUTPUT_JSON = os.path.join(BASE_DIR, "spicy_news.json")
 KEY_PATH = os.path.join(BASE_DIR, "key.txt")
 
@@ -13,21 +12,21 @@ SYSTEM_PROMPT = """
 You are a cynical F1 social media strategist aiming for maximum viral engagement.
 Analyze the provided IDs and Titles.
 
-1. CRITERIA: Select the 20 most "spicy" items. Focus on:
+1. CRITERIA: Select the 13 most "spicy" items. Focus on:
    - Driver/Team drama or "war of words".
    - Controversial steward decisions or FIA bias.
    - Shocking rumors or major technical failures.
 
 2. DEDUPLICATION:
    - Headlines may be in English, Italian, or Spanish. 
-   - You must recognize when multiple titles refer to the SAME news event across different languages.
-   - For any given news event, pick only ONE ID (the one with the most provocative title).
+   - Recognize when multiple titles refer to the SAME news event across different languages.
+   - Pick only ONE ID (the one with the most provocative title) per event.
 
-3. UNIQUENESS: Ensure each of the 20 selected IDs represents a different, unique news topic.
+3. UNIQUENESS: Ensure each of the 13 selected IDs represents a different, unique news topic.
 
 4. EXCLUSIONS: Skip standard race results, practice times, weather updates, or generic PR quotes.
 
-5. OUTPUT: Return ONLY a JSON list of the 20 chosen IDs: ["id1", "id2", ...]
+5. OUTPUT: Return ONLY a JSON list of the 13 chosen IDs: ["id1", "id2", ...]
 """
 
 def get_api_key():
@@ -36,16 +35,16 @@ def get_api_key():
 
 def main():
     if not os.path.exists(INPUT_JSON): return
-    with open(INPUT_JSON, "r") as f:
+    with open(INPUT_JSON, "r", encoding="utf-8") as f:
         full_data = json.load(f)
 
     if not full_data: return
 
     # Check if we should skip Gemini
-    if len(full_data) <= 20:
-        with open(OUTPUT_JSON, "w") as f:
-            json.dump(full_data, f, indent=4)
-        print(f"✅ Items count ({len(full_data)}) <= 20. Saved directly to {OUTPUT_JSON}.")
+    if len(full_data) <= 13:
+        with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(full_data, f, indent=4, ensure_ascii=False)
+        print(f"✅ Items count ({len(full_data)}) <= 13. Saved directly to {OUTPUT_JSON}.")
         return
 
     api_key = get_api_key()
@@ -67,8 +66,8 @@ def main():
         spicy_ids = json.loads(response.text)
         final_list = [item for item in full_data if item["id"] in spicy_ids]
 
-        with open(OUTPUT_JSON, "w") as f:
-            json.dump(final_list, f, indent=4)
+        with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(final_list, f, indent=4, ensure_ascii=False)
             
         print(f"✅ Successfully filtered {len(final_list)} spicy items using gemini-2.5-flash-lite.")
 
