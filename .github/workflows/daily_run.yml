@@ -2,7 +2,7 @@ name: Twitter Bot Run
 
 on:
   schedule:
-    - cron: '30 3,13 * * *' # 9:00 AM & 7:00 PM IST
+    - cron: '30 3,13 * * *'
   workflow_dispatch:
 
 jobs:
@@ -21,20 +21,20 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install beautifulsoup4 cloudscraper google-genai playwright requests trafilatura
-          playwright install chromium
+          pip install beautifulsoup4 google-genai playwright readability-lxml lxml
+          python -m playwright install chromium
+          python -m playwright install-deps
 
       - name: Create key file
         run: echo "${{ secrets.API_KEY_DATA }}" > code/key.txt
 
       - name: Run scripts with delay
         run: |
-          python code/step0.py 
-          python code/step1.py 
-          python code/step2.py 
-          python code/step3.py 
-          python code/step4.py 
-          python code/step5.py
+          python code/step0.py && sleep 30
+          python code/step1.py && sleep 30
+          python code/step2.py && sleep 30
+          python code/step3.py && sleep 30
+          python code/step4.py
 
       - name: Remove key before commit
         run: rm -f code/key.txt
