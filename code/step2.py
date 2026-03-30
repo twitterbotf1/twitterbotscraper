@@ -1,64 +1,95 @@
-import os
 import json
-import requests
+import os
 from bs4 import BeautifulSoup
+from readability import Document
+from playwright.sync_api import sync_playwright
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_JSON = os.path.join(BASE_DIR, "new-urls.json")
-OUTPUT_JSON = os.path.join(BASE_DIR, "head.json")
-FAIL_JSON = os.path.join(BASE_DIR, "fail.json")
+INPUT_FILE = os.path.join(BASE_DIR, "new-urls.json")
+OUTPUT_FILE = os.path.join(BASE_DIR, "final_articles.json")
 
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
-}
+def extract_data(html):
+    soup = BeautifulSoup(html, 'lxml')
+    
+    # 1. Attempt to find og:image
+    hero_image = None
+    og_img = soup.find('meta', property='og:image')
+    if og_img and og_img.get('content'):
+        hero_image = og_img['content']
+        
+    # 2. Extract main article HTML and title using readability
+    try:
+        doc = Document(html)
+        title = doc.title()
+        article_html = doc.summary()
+    except Exception:
+        return None, None, None
+    
+    article_soup = BeautifulSoup(article_html, 'lxml')
+    
+    # 3. Fallback to first image in article body if og:image is missing
+    if not hero_image:
+        img_tag = article_soup.find('img')
+        if img_tag and img_tag.get('src'):
+            hero_image = img_tag['src']
+            
+    # 4. Clean text extraction
+    content = article_soup.get_text(separator='\n', strip=True)
+    
+    return title, hero_image, content
 
 def main():
-    if not os.path.exists(INPUT_JSON):
+    if not os.path.exists(INPUT_FILE):
+        print(f"Input file not found: {INPUT_FILE}")
         return
         
-    with open(INPUT_JSON, "r", encoding="utf-8") as f:
+    with open(INPUT_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
-    if not data:
-        return
-
-    enriched = []
-    failed_items = []
+        
+    final_data =[]
     success_count = 0
-    fail_count = 0
+    failure_count = 0
     
-    for item in data:
-        try:
-            res = requests.get(item['url'], headers=HEADERS, timeout=10)
-            res.raise_for_status()
-            soup = BeautifulSoup(res.content, 'lxml')
-            
-            og_title = soup.find('meta', property='og:title')
-            og_image = soup.find('meta', property='og:image')
-            
-            if og_title:
-                item['title'] = og_title['content'].strip()
-                item['hero_image'] = og_image['content'].strip() if og_image else None
-                enriched.append(item)
-                success_count += 1
-            else:
-                item['error'] = "No OG title found"
-                failed_items.append(item)
-                fail_count += 1
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
+        page = context.new_page()
+        
+        for item in data:
+            url = item.get("url")
+            try:
+                page.goto(url, timeout=45000, wait_until="domcontentloaded")
+                page.wait_for_timeout(2000) # Allow JS to load dynamic content
+                html = page.content()
                 
-        except Exception as e:
-            item['error'] = str(e)
-            failed_items.append(item)
-            fail_count += 1
-            continue
+                title, hero_image, content = extract_data(html)
+                
+                if content and len(content) > 50:
+                    final_data.append({
+                        "id": item["id"],
+                        "title": title,
+                        "hero_image": hero_image,
+                        "content": content
+                    })
+                    success_count += 1
+                    print(f"[SUCCESS] {url}")
+                else:
+                    failure_count += 1
+                    print(f"[FAILED] Content missing or too short: {url}")
+                    
+            except Exception as e:
+                failure_count += 1
+                print(f"[FAILED] Error processing {url}: {e}")
 
-    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(enriched, f, indent=4)
-
-    with open(FAIL_JSON, "w", encoding="utf-8") as f:
-        json.dump(failed_items, f, indent=4)
-    
-    print(f"Successful: {success_count}")
-    print(f"Unsuccessful: {fail_count}")
+        browser.close()
+            
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, ensure_ascii=False)
+        
+    print(f"\nTotal Success: {success_count}")
+    print(f"Total Failure: {failure_count}")
 
 if __name__ == "__main__":
     main()
