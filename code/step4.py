@@ -44,7 +44,7 @@ def process_batch(client, batch_data):
     input_payload = [{"id": item["id"], "title": item["title"], "content": item["content"]} for item in batch_data]
     try:
         response = client.models.generate_content(
-            model="gemini-3.1-pro-preview",
+            model="gemini-2.5-pro",
             contents=json.dumps(input_payload),
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_PROMPT,
