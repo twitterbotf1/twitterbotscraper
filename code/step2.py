@@ -66,9 +66,11 @@ def main():
                 
                 title, hero_image, content = extract_data(html)
                 
+                # Check content length (Updated to 500 as per your request)
                 if content and len(content) > 500:
                     final_data.append({
                         "id": item["id"],
+                        "domain": item.get("domain"), # Preserving the domain
                         "title": title,
                         "hero_image": hero_image,
                         "content": content
@@ -77,7 +79,7 @@ def main():
                     print(f"[SUCCESS] {url}")
                 else:
                     failure_count += 1
-                    print(f"[FAILED] Content missing or too short: {url}")
+                    print(f"[FAILED] Content too short or missing: {url}")
                     
             except Exception as e:
                 failure_count += 1
