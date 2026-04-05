@@ -11,7 +11,7 @@ OUTPUT_JSON = os.path.join(BASE_DIR, "final_posts.json")
 KEY_PATH = os.path.join(BASE_DIR, "key.txt")
 
 SYSTEM_PROMPT = """
-You are a Teenage F1 content Creator. You use the given content to derive a summary and a spicy rage bait type post for your social media account. You like to use appropriate emoji's and always keep both summary and the spicy post under 270 characters. 
+You are a Teenage F1 content Creator. You use the given content to derive a summary and a spicy rage bait type post for your social media account. You like to use appropriate emoji's and always keep both summary and the spicy post under 230 characters to allow for manual additions. 
 
 You have a dual persona that only applies to the spicy post:
 
@@ -27,11 +27,8 @@ You have a dual persona that only applies to the spicy post:
 
 STRICT RULES:
 - NO CROSS-OVERS: If the article is not about Charles, do not mention him.
-- NO COMPARISONS: Stick strictly to the content of the current article. Do not compare to past races, past seasons, or other drivers unless explicitly mentioned in the text. Keep comparisons to an absolute minimum.
-- FORMAT: Must include ONLY these 3 hashtags: #formula1 #f1twt #f1.
-- EMOJIS: Use relevant emojis to maximize chaos.
-- NO other hashtags allowed.
-- LENGTH: Maximum 270 characters per tweet.
+- NO COMPARISONS: Stick strictly to the content of the current article. 
+- LENGTH: Maximum 230 characters per string (Summary and Tweet).
 - LANGUAGE: English.
 - OUTPUT: Return ONLY a raw JSON object mapping IDs to a list of 2 strings: {"id_xyz": ["summary", "tweet1"]}
 """
@@ -44,7 +41,7 @@ def process_batch(client, batch_data):
     input_payload = [{"id": item["id"], "title": item["title"], "content": item["content"]} for item in batch_data]
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+            model="gemini-2.0-flash-lite",
             contents=json.dumps(input_payload),
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_PROMPT,
@@ -65,7 +62,6 @@ def main():
     client = genai.Client(api_key=api_key)
 
     if not os.path.exists(INPUT_JSON): return
-
     with open(INPUT_JSON, "r", encoding="utf-8") as f:
         valid_data = json.load(f)
 
@@ -81,21 +77,32 @@ def main():
         if i + batch_size < len(valid_data):
             time.sleep(5)
 
-    final_output =[]
-    keys_to_remove = {"id", "title", "content"}
+    final_output = []
+    # We remove domain from the final JSON but use it for the suffix
+    keys_to_remove = {"id", "title", "content", "domain"}
 
     for item in valid_data:
         item_id = item["id"]
         if item_id in all_tweets:
+            generated = all_tweets[item_id] # [summary, tweet]
+            
+            # 1. Clean Domain Name
+            raw_domain = item.get("domain", "news")
+            clean_domain = raw_domain.replace("www.", "").replace(".com", "")
+            
+            # 2. Append required suffix to the Summary (generated[0])
+            suffix = f" #formula1 #f1 #f1twt #{clean_domain}"
+            generated[0] = f"{generated[0]}{suffix}"
+            
+            # 3. Build final item
             cleaned_item = {k: v for k, v in item.items() if k not in keys_to_remove}
-            generated = all_tweets[item_id]
             cleaned_item["generated_tweets"] = [item["title"]] + generated
             final_output.append(cleaned_item)
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(final_output, f, indent=4, ensure_ascii=False)
 
-    print(f"✅ Finished. Output saved to {OUTPUT_JSON}")
+    print(f"✅ Finished. Appended domain tags to {len(final_output)} summaries.")
 
 if __name__ == "__main__":
     main()
