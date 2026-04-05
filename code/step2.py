@@ -66,7 +66,7 @@ def main():
                 
                 title, hero_image, content = extract_data(html)
                 
-                if content and len(content) > 50:
+                if content and len(content) > 500:
                     final_data.append({
                         "id": item["id"],
                         "title": title,
