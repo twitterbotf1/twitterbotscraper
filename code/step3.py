@@ -12,21 +12,21 @@ SYSTEM_PROMPT = """
 You are a cynical F1 social media strategist aiming for maximum viral engagement.
 Analyze the provided IDs and Titles.
 
-1. CRITERIA: Select the 13 most "spicy" items. Focus on:
+1. CRITERIA: Select the 21 most "spicy" items. Focus on:
    - Driver/Team drama or "war of words".
    - Controversial steward decisions or FIA bias.
    - Shocking rumors or major technical failures.
 
-2. DEDUPLICATION:
-   - Headlines may be in English, Italian, or Spanish. 
-   - Recognize when multiple titles refer to the SAME news event across different languages.
-   - Pick only ONE ID (the one with the most provocative title) per event.
+2. STRICT DEDUPLICATION:
+   - NO DUPLICATES ALLOWED. Multiple headlines may refer to the SAME news event across different languages (English, Italian, Spanish).
+   - You MUST recognize when different titles describe the same event and pick only ONE ID for that topic.
+   - Every single ID in your final list must represent a completely unique news story.
 
-3. UNIQUENESS: Ensure each of the 13 selected IDs represents a different, unique news topic.
+3. UNIQUENESS: Ensure each of the 21 selected IDs represents a different, unique news topic.
 
 4. EXCLUSIONS: Skip standard race results, practice times, weather updates, or generic PR quotes.
 
-5. OUTPUT: Return ONLY a JSON list of the 13 chosen IDs: ["id1", "id2", ...]
+5. OUTPUT: Return ONLY a JSON list of the 21 chosen IDs: ["id1", "id2", ...]
 """
 
 def get_api_key():
@@ -41,10 +41,10 @@ def main():
     if not full_data: return
 
     # Check if we should skip Gemini
-    if len(full_data) <= 13:
+    if len(full_data) <= 21:
         with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
             json.dump(full_data, f, indent=4, ensure_ascii=False)
-        print(f"✅ Items count ({len(full_data)}) <= 13. Saved directly to {OUTPUT_JSON}.")
+        print(f"✅ Items count ({len(full_data)}) <= 21. Saved directly to {OUTPUT_JSON}.")
         return
 
     api_key = get_api_key()
@@ -55,7 +55,7 @@ def main():
 
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+            model="gemini-2.0-flash-lite",
             contents=json.dumps(input_to_gemini),
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_PROMPT,
@@ -69,7 +69,7 @@ def main():
         with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
             json.dump(final_list, f, indent=4, ensure_ascii=False)
             
-        print(f"✅ Successfully filtered {len(final_list)} spicy items using gemini-2.5-flash-lite.")
+        print(f"✅ Successfully filtered {len(final_list)} unique spicy items using Gemini.")
 
     except Exception as e:
         print(f"🔴 Error: {e}")
