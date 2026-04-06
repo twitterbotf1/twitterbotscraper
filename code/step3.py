@@ -55,7 +55,7 @@ def main():
 
     try:
         response = client.models.generate_content(
-            model="gemini-3.1-flash-lite",
+            model="gemini-3.1-flash-lite-preview",
             contents=json.dumps(input_to_gemini),
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_PROMPT,
