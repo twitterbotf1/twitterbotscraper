@@ -88,9 +88,11 @@ https://racingnews365.com/live-timing-updates-blog-f1
 https://racingnews365.com/major-ferrari-problem-highlighted-as-lewis-hamilton-milestone-not-taken-for-granted
 https://racingnews365.com/major-mclaren-upgrade-reported-as-mercedes-put-on-red-alert
 https://racingnews365.com/major-red-bull-ferrari-upside-down-rear-wing-differences-explained
+https://racingnews365.com/martin-brundle-reveals-unknown-lewis-hamilton-ferrari-contract-clause
 https://racingnews365.com/max-verstappen-and-red-bull-handed-rough-year-verdict-after-f1-complaints
 https://racingnews365.com/max-verstappen-attempts-nascar-with-dramatic-results
 https://racingnews365.com/max-verstappen-breaks-silence-after-gianpiero-lambiase-red-bull-exit
+https://racingnews365.com/max-verstappen-calls-for-red-bull-investigation-as-george-russell-bounces-back
 https://racingnews365.com/max-verstappen-causes-a-stir-with-significantly-modified-red-bull
 https://racingnews365.com/max-verstappen-comes-to-awkward-realisation-after-daniel-ricciardo-conversation
 https://racingnews365.com/max-verstappen-completely-smashes-super-gt-rival-this-is-insane
@@ -137,6 +139,7 @@ https://racingnews365.com/oscar-piastri-hints-at-mclaren-disadvantage-during-f1-
 https://racingnews365.com/oscar-piastri-spots-quite-interesting-f1-trend-which-could-topple-mercedes
 https://racingnews365.com/racing-driver-juha-miettinen-killed-in-tragic-nurburgring-crash
 https://racingnews365.com/red-bull-admit-to-paying-the-price-over-major-f1-car-decision
+https://racingnews365.com/red-bull-boss-issues-clear-stance-on-jos-verstappen-toto-wolff-talks
 https://racingnews365.com/red-bull-delivered-warning-ahead-of-gianpiero-lambiase-exit-got-to-be-careful
 https://racingnews365.com/red-bull-driver-makes-undrivable-claim-as-major-upgrades-introduced
 https://racingnews365.com/red-bull-f1-boss-facing-defining-moment-after-latest-high-profile-exit
@@ -321,6 +324,8 @@ https://www.autosport.com/f1/news/explained-the-numbers-behind-the-fias-late-cha
 https://www.autosport.com/f1/news/f1-2026-might-be-flawed-but-miami-showed-why-its-also-enjoyable/10818253
 https://www.autosport.com/f1/news/f1-boss-issues-verdict-on-start-of-2026-season-backs-potential-changes/10812837
 https://www.autosport.com/f1/news/f1-brings-miami-gp-start-time-forward-amid-thunderstorm-threat/10817621
+https://www.autosport.com/f1/news/f1-canadian-gp-george-russell-defeats-kimi-antonelli-to-canada-f1-sprint-pole/10823121
+https://www.autosport.com/f1/news/f1-canadian-gp-kimi-antonelli-dominates-practice-session-amid-three-red-flags/10823021
 https://www.autosport.com/f1/news/f1-japanese-gp-george-russell-leads-kimi-antonelli-by-0026s/10808390
 https://www.autosport.com/f1/news/f1-japanese-gp-kimi-antonelli-on-pole-max-verstappen-out-in-q2/10808842
 https://www.autosport.com/f1/news/f1-japanese-gp-live-commentary-and-updates-race-day-10809284/10809284
@@ -414,6 +419,7 @@ https://www.autosport.com/f1/news/recalling-the-start-of-a-new-f1-era/10818340
 https://www.autosport.com/f1/news/red-bull-a-steady-exodus-of-staff-over-the-past-three-years/10811972
 https://www.autosport.com/f1/news/red-bull-aims-to-hit-f1-weight-limit-at-austrian-grand-prix/10819905
 https://www.autosport.com/f1/news/red-bull-f1-car-so-undriveable-it-was-dangerous-at-suzuka-isack-hadjar/10809408
+https://www.autosport.com/f1/news/red-bull-f1-team-boss-no-intention-behind-jos-verstappen-and-toto-wolff-public-meeting/10823105
 https://www.autosport.com/f1/news/red-bull-now-paying-the-price-for-f1-2025-title-charge-but-it-has-no-regrets/10810404
 https://www.autosport.com/f1/news/red-bull-shakes-up-f1-technical-team/10813329
 https://www.autosport.com/f1/news/red-bull-targets-oscar-piastri-as-max-verstappen-replacement/10818721
@@ -442,6 +448,7 @@ https://www.autosport.com/f1/news/the-three-clues-to-the-f1-start-problem-antone
 https://www.autosport.com/f1/news/the-top-11-lost-f1-victories-after-the-flag/10812788
 https://www.autosport.com/f1/news/the-worst-title-defences-in-f1-history/10814422
 https://www.autosport.com/f1/news/those-tracks-we-want-to-return-to-the-f1-calendar/10815133
+https://www.autosport.com/f1/news/time-keeps-ticking-on-2027-changes-f1-to-host-further-talks-over-canadian-gp/10823047
 https://www.autosport.com/f1/news/top-10-f1-drivers-of-the-1950s/10820353
 https://www.autosport.com/f1/news/top-10-f1-drivers-of-the-1960s/10822297
 https://www.autosport.com/f1/news/turkish-gp-returns-to-f1-calendar-from-2027-with-five-year-deal/10815041
@@ -457,6 +464,7 @@ https://www.autosport.com/f1/news/what-did-verstappen-actually-say-in-2023-about
 https://www.autosport.com/f1/news/what-has-changed-as-fom-and-fia-appear-more-aligned-on-f1-future/10813228
 https://www.autosport.com/f1/news/what-is-at-the-top-of-the-to-do-list-for-each-f1-team/10812726
 https://www.autosport.com/f1/news/what-links-a-scribes-rudimentary-70s-transport-with-an-inspiring-education-initiative/10815105
+https://www.autosport.com/f1/news/what-skys-new-f1-tv-deal-means-for-apple/10822531
 https://www.autosport.com/f1/news/what-the-bahrain-and-saudi-cancellations-reveal-about-how-f1s-money-works/10811691
 https://www.autosport.com/f1/news/what-we-learned-from-the-2026-f1-miami-gp-sprint-race-and-qualifying/10817606
 https://www.autosport.com/f1/news/what-were-norriss-chances-of-winning-the-f1-miami-grand-prix/10818017
@@ -526,6 +534,7 @@ https://www.bbc.co.uk/sport/formula1/articles/cj37p3k1nx8o
 https://www.bbc.co.uk/sport/formula1/articles/cj37p3k1nx8o#comments
 https://www.bbc.co.uk/sport/formula1/articles/cjep0wkjpp2o
 https://www.bbc.co.uk/sport/formula1/articles/ckg3y15zje8o
+https://www.bbc.co.uk/sport/formula1/articles/ckgplmj1rg9o
 https://www.bbc.co.uk/sport/formula1/articles/cly9z7z7ee5o
 https://www.bbc.co.uk/sport/formula1/articles/cly9z7z7ee5o#comments
 https://www.bbc.co.uk/sport/formula1/articles/cn4pq5gvkxxo
@@ -536,6 +545,7 @@ https://www.bbc.co.uk/sport/formula1/articles/cp84xd25wg9o
 https://www.bbc.co.uk/sport/formula1/articles/cp84xd25wg9o#comments
 https://www.bbc.co.uk/sport/formula1/articles/cp9v7ppd004o
 https://www.bbc.co.uk/sport/formula1/articles/cp9v7ppd004o#comments
+https://www.bbc.co.uk/sport/formula1/articles/cpqpw4y5vgqo
 https://www.bbc.co.uk/sport/formula1/articles/cre1zgj4xr3o
 https://www.bbc.co.uk/sport/formula1/articles/crk1gdp05k5o
 https://www.bbc.co.uk/sport/formula1/articles/crk1gdp05k5o#comments
@@ -548,6 +558,7 @@ https://www.bbc.co.uk/sport/formula1/articles/cx24vjd290no
 https://www.bbc.co.uk/sport/formula1/articles/cy41xd97g1zo
 https://www.bbc.co.uk/sport/formula1/articles/cyv2354ldmlo
 https://www.bbc.co.uk/sport/formula1/articles/cz7879zze0no
+https://www.bbc.co.uk/sport/formula1/live/c7vq3v5jj35t
 https://www.f1oversteer.com/news/a-lot-of-people-in-f1-dont-want-to-work-with-lawrence-stroll-after-what-theyve-heard
 https://www.f1oversteer.com/news/adelaide-proposed-as-possible-replacement-if-qatar-or-abu-dhabi-f1-races-are-cancelled
 https://www.f1oversteer.com/news/adrian-newey-has-set-a-date-for-aston-martins-complete-overhaul-of-the-amr26
@@ -558,6 +569,7 @@ https://www.f1oversteer.com/news/alex-albon-could-be-free-to-make-red-bull-retur
 https://www.f1oversteer.com/news/alex-brundle-compares-gianpiero-lambiase-joining-mclaren-to-lewis-hamilton-signing-with-ferrari
 https://www.f1oversteer.com/news/alex-wurz-says-most-drivers-in-f1-agree-on-the-radical-engine-rule-change-the-sport-needs-to-make
 https://www.f1oversteer.com/news/andrea-stella-admits-mclaren-kept-lando-norris-on-the-back-foot-at-japanese-grand-prix
+https://www.f1oversteer.com/news/andrea-stella-reveals-mclaren-made-last-minute-u-turn-on-upgrade-ahead-of-montreal-sprint-qualifying
 https://www.f1oversteer.com/news/andrea-stella-reveals-what-contributed-to-gianpiero-lambiases-decision-to-join-mclaren
 https://www.f1oversteer.com/news/andrea-stella-says-his-mclaren-role-is-not-sustainable-as-he-responds-to-pre-contracts-rumours
 https://www.f1oversteer.com/news/andrea-stella-will-offer-ferrari-exactly-what-they-have-been-missing-with-fred-vasseur
@@ -578,6 +590,7 @@ https://www.f1oversteer.com/news/charles-leclerc-blasts-qualifying-in-f1-2026-wi
 https://www.f1oversteer.com/news/charles-leclerc-hopes-to-end-lewis-hamiltons-2026-ferrari-advantage-in-japan-after-simulator-test
 https://www.f1oversteer.com/news/charles-leclerc-says-ferrari-need-to-improve-absolutely-everything-on-the-sf-26-over-april-break
 https://www.f1oversteer.com/news/charles-leclerc-tests-new-ferrari-winglet-concept-at-monza-after-f1-rivals-failed-to-get-it-banned
+https://www.f1oversteer.com/news/charles-leclerc-urges-ferrari-to-take-action-against-lando-norris-for-illegal-move-at-canadian-gp
 https://www.f1oversteer.com/news/charles-leclercs-former-driver-coach-says-he-can-challenge-max-verstappen-in-an-inferior-car
 https://www.f1oversteer.com/news/charles-leclercs-japanese-gp-qualifying-data-clearly-shows-f1-need-to-make-further-rule-changes
 https://www.f1oversteer.com/news/christian-horner-sees-a-major-cause-for-concern-in-mercedes-offer-to-buy-alpine-shares
@@ -760,6 +773,7 @@ https://www.f1oversteer.com/news/martin-brundle-shares-the-clumsy-lando-norris-e
 https://www.f1oversteer.com/news/martin-brundle-shares-what-hes-hearing-about-mercedes-canadian-grand-prix-upgrades
 https://www.f1oversteer.com/news/martin-brundle-warns-max-verstappen-it-wont-be-easy-to-leave-red-bull-in-2027
 https://www.f1oversteer.com/news/martin-brundle-worried-by-mclarens-bizarre-miami-gp-qualifying-after-lando-norris-sprint-win
+https://www.f1oversteer.com/news/max-verstappen-blasts-horrendous-red-bull-issue-during-unbroadcast-radio-outburst-at-canadian-gp
 https://www.f1oversteer.com/news/max-verstappen-could-get-his-way-as-f1-bosses-consider-2031-engine-change-that-he-will-love
 https://www.f1oversteer.com/news/max-verstappen-could-now-replace-lewis-hamilton-but-hes-always-been-sceptical-about-ferrari
 https://www.f1oversteer.com/news/max-verstappen-faces-35-kilo-weight-disadvantage-as-he-tries-to-win-nurburgring-24-hours
@@ -795,6 +809,7 @@ https://www.f1oversteer.com/news/nico-rosberg-calls-kimi-antonelli-the-ultimate-
 https://www.f1oversteer.com/news/nigel-mansell-says-everyone-is-rooting-for-kimi-antonelli-in-the-f1-title-race-with-george-russell
 https://www.f1oversteer.com/news/ollie-bearman-blasts-unacceptable-franco-colapinto-after-his-50g-crash-at-japanese-grand-prix
 https://www.f1oversteer.com/news/one-f1-driver-may-not-finish-the-season-because-his-team-principal-clearly-doesnt-like-him
+https://www.f1oversteer.com/news/oscar-piastri-claims-mclaren-have-always-had-an-edge-over-ferrari-in-area-the-scuderia-have-excelled
 https://www.f1oversteer.com/news/oscar-piastri-criticises-random-2026-f1-racing-after-his-first-proper-battles-at-miami-gp
 https://www.f1oversteer.com/news/oscar-piastri-gives-very-realistic-answer-on-whether-hes-world-champion-material-in-formula-1
 https://www.f1oversteer.com/news/oscar-piastri-has-a-perfect-opportunity-to-become-the-main-man-at-red-bull-if-max-verstappen-leaves
@@ -819,6 +834,7 @@ https://www.f1oversteer.com/news/red-bull-warned-that-max-verstappen-could-bicke
 https://www.f1oversteer.com/news/riccardo-patrese-feels-charles-leclerc-shouldnt-beat-himself-up-after-hearing-his-miami-comments
 https://www.f1oversteer.com/news/sebastian-vettels-former-manager-says-he-let-himself-down-with-unacceptable-radio-message
 https://www.f1oversteer.com/news/stefano-domenicali-told-he-has-failed-as-formula-1-boss-if-he-lets-max-verstappen-quit
+https://www.f1oversteer.com/news/ted-kravitz-says-racing-bulls-were-warned-by-the-fia-about-clutch-issue-on-liam-lawsons-f1-car
 https://www.f1oversteer.com/news/toto-wolff-states-why-its-not-right-to-think-ferrari-should-have-discovered-kimi-antonelli
 https://www.f1oversteer.com/news/toto-wolff-would-have-to-pay-for-max-verstappens-mercedes-move-out-of-his-own-pocket
 https://www.f1oversteer.com/news/valtteri-bottas-thinks-people-have-the-wrong-idea-of-prime-lewis-hamilton-after-being-f1-teammates
@@ -900,6 +916,7 @@ https://www.formula1.com/en/latest/article/explained-what-f1-teams-and-drivers-w
 https://www.formula1.com/en/latest/article/explained-what-is-the-f1-cost-cap-and-why-has-it-gone-up.2tYtDIe5SbE5utjThctBT3
 https://www.formula1.com/en/latest/article/explained-why-turkey-is-back-on-the-calendar-from-2027.1BJjW3kYEnR97HxlV7AFuy
 https://www.formula1.com/en/latest/article/f1-academy-champion-pin-completes-maiden-f1-test-with-mercedes-at-silverstone.5Zu7iy0DMrJSwEJL7E9df3
+https://www.formula1.com/en/latest/article/f1-academy-palmowski-overshadows-the-field-on-way-to-dominant-pole-position-double-in-montreal-qualifying.4fYJnOfkNUF3uHrzMn3SAU
 https://www.formula1.com/en/latest/article/f1-and-sky-agree-new-long-term-partnership-across-uk-ireland-and-italy.Yd2VK2z6QxZkrR6zH2ssr
 https://www.formula1.com/en/latest/article/f1-driver-contracts-from-max-verstappen-to-lewis-hamilton-how-long-do-the-drivers-current-deals-last.4ub4xFggoaKgzMCTZhdSXw
 https://www.formula1.com/en/latest/article/f1-drivers-championship-odds-update-after-first-three-races-of-2026-season.2YRtKoLRCQBuVKmyyOzgL4
@@ -915,6 +932,7 @@ https://www.formula1.com/en/latest/article/fp1-russell-heads-mercedes-1-2-in-ope
 https://www.formula1.com/en/latest/article/fp2-piastri-sets-the-pace-from-antonelli-and-russell-during-second-practice.2CeFTkESJX45t8tlF1V0rm
 https://www.formula1.com/en/latest/article/fp3-antonelli-beats-mercedes-team-mate-russell-to-fastest-time-in-final.NfWBOJEAaBCzWLWBDz81J
 https://www.formula1.com/en/latest/article/friday-debrief-could-we-be-set-for-a-four-way-title-fight-after-miamis-sprint-qualifying-thriller.5swn3qSVpa085RBrfdHQKX
+https://www.formula1.com/en/latest/article/friday-debrief-who-can-stop-russell-getting-his-championship-charge-back-on-track-in-canada.74zVvohnPmUjN3mw9eVzHH
 https://www.formula1.com/en/latest/article/from-a-six-wheeled-car-to-the-flip-flop-wing-8-of-the-wildest-tech.1GRhOeOV4saRcrbvxWYMtG
 https://www.formula1.com/en/latest/article/from-ascari-to-antonelli-the-f1-drivers-who-went-back-to-back-for-their.5KcnlMeNntzD0hXqfUJ2KJ
 https://www.formula1.com/en/latest/article/from-blockbuster-movies-to-driver-tributes-10-of-the-most-striking-one-off.2mD9BXWzqCK3C8ASum4fpt
@@ -1013,6 +1031,7 @@ https://www.formula1.com/en/latest/article/quiz-10-questions-about-canadian-driv
 https://www.formula1.com/en/latest/article/quiz-name-the-f1-world-champion-from-the-year.2PC5zvlDkEzzye9fCdyFrf
 https://www.formula1.com/en/latest/article/quiz-the-youngest-grand-prix-winners-in-f1-history.6FVMF4Ayi479XDvbHdJBgT
 https://www.formula1.com/en/latest/article/refinements-to-2026-f1-regulations-agreed-by-all-stakeholders.1xA0TRau0DvyId6R7oZjFv
+https://www.formula1.com/en/latest/article/russell-grabs-pole-position-in-canada-sprint-qualifying-ahead-of-antonelli-and-norris.7Fm9bjk84nwzOysiMriBCs
 https://www.formula1.com/en/latest/article/russell-insists-no-need-to-panic-over-championship-gap-as-he-shares-expectations-for-mercedes-upgrades.5NT81tuH8ZRcjfjBihMqyN
 https://www.formula1.com/en/latest/article/sainz-details-all-the-targets-for-this-year-as-williams-seek-improvements.1vbzW2EKegCN13oAC4KdCy
 https://www.formula1.com/en/latest/article/season-prep-karting-chaos-and-monte-carlo-meet-ups-what-f1-drivers-have-been.1jfRvtRl9kY4G8x3QddnWt
@@ -1024,6 +1043,7 @@ https://www.formula1.com/en/latest/article/stella-confirms-mclaren-are-set-to-de
 https://www.formula1.com/en/latest/article/stella-explains-how-mclaren-will-use-april-break-to-fight-for-more-important.6wZzPsmLuLshydRnZh5TA1
 https://www.formula1.com/en/latest/article/stella-explains-where-mclaren-need-to-improve-after-japanese-grand-prix.1yYhEQlL1L4Nhp28xV8krH
 https://www.formula1.com/en/latest/article/stella-grateful-for-progress-but-concedes-execution-and-optimisation-cost-mclaren-victory-in-miami.4cOC5Gcs0M6IESYBF2EKvg
+https://www.formula1.com/en/latest/article/stella-reacts-to-silly-season-rumours-of-piastri-to-red-bull-and-lambiase-becoming-mclaren-team-principal.3yWMnf1xwIvXfrqTl7RGmr
 https://www.formula1.com/en/latest/article/stories-have-been-fabricated-ocon-denies-haas-rift-rumours-ahead-of-canadian-grand-prix.6708dpetHTMAJIxnDxksLa
 https://www.formula1.com/en/latest/article/strategy-guide-what-are-the-tactical-options-for-sundays-miami-grand-prix.4jLTrmrH2sKAqFBICdDZWu
 https://www.formula1.com/en/latest/article/stroll-explains-aston-martins-focus-ahead-of-his-home-race-in-canada-after-step-forward.6pwGEzcbm6FYPWIq6eUaGU
@@ -1075,6 +1095,7 @@ https://www.formula1.com/en/latest/article/weird-stats-from-the-first-three-roun
 https://www.formula1.com/en/latest/article/welcome-to-miami-how-to-make-the-most-of-a-trip-to-the-sunshine-state.49qIM7WpMR0labGrPaDHGB
 https://www.formula1.com/en/latest/article/what-the-teams-said-race-day-in-miami-2026.735vCOOrEcCRd8AzIAyb9l
 https://www.formula1.com/en/latest/article/what-the-teams-said-sprint-day-and-qualifying-in-miami-2026.7kl5yPnTyqqTGrUXuSZTte
+https://www.formula1.com/en/latest/article/what-the-teams-said-sprint-qualifying-in-canada-2026.5Ptft0Y9yhhrx7qWcxYaKk
 https://www.formula1.com/en/latest/article/what-the-teams-said-sprint-qualifying-in-miami-2026.6KM5U7hTwOSPzeyWJ53PNR
 https://www.formula1.com/en/latest/article/what-time-is-the-formula-1-2026-canadian-grand-prix-and-how-can-i-watch-it.1n6eOmot6IDcyeqwwK60KA
 https://www.formula1.com/en/latest/article/what-we-learned-about-the-pecking-order-after-miami.4BnWP8L4gcgLBWb5eX5RrP
@@ -1131,8 +1152,12 @@ https://www.gazzetta.it/Formula-1/20-04-2026/nuove-regole-f1-modifiche-piloti-pi
 https://www.gazzetta.it/Formula-1/21-04-2026/escort-milano-calciatori-pilota.shtml
 https://www.gazzetta.it/Formula-1/21-04-2026/modifiche-regole-f1-cosa-cambia-da-miami.shtml
 https://www.gazzetta.it/Formula-1/21-05-2026/byd-pensa-a-un-team-di-f1-con-christian-horner-alla-guida.shtml
+https://www.gazzetta.it/Formula-1/22-05-2026/alonso-attacca-la-nuova-f1-abbiamo-perso-le-vere-corse-sorpassi-solo-manovre-evasive.shtml
+https://www.gazzetta.it/Formula-1/22-05-2026/audi-e-ferrari-contrarie-alla-modifica-dei-motori-f1-2027.shtml
 https://www.gazzetta.it/Formula-1/22-05-2026/leclerc-ferrari-ancora-dietro-alla-mercedes-ma-l-aduo-ci-aiutera-ad-avvicinarci.shtml
+https://www.gazzetta.it/Formula-1/22-05-2026/live-f1-canada-la-diretta-di-libere-e-qualifiche-sprint.shtml
 https://www.gazzetta.it/Formula-1/23-04-2026/formula-1-gp-miami-libere-di-90-minuti-in-florida-per-testare-le-modifiche.shtml
+https://www.gazzetta.it/Formula-1/23-05-2026/alain-prost-rapina.shtml
 https://www.gazzetta.it/Formula-1/24-04-2026/audi-f1-allan-mcnish-nominato-direttore-sportivo.shtml
 https://www.gazzetta.it/Formula-1/24-04-2026/domenicali-tribune-piene-la-f1-e-in-ottima-forma.shtml
 https://www.gazzetta.it/Formula-1/24-04-2026/f1-nuove-regole-a-miami-qualifiche-piu-veloci-ma-senza-rivoluzioni.shtml
@@ -1155,6 +1180,7 @@ https://www.gazzetta.it/Formula-1/30-04-2026/f1-gp-miami-pioggia-fulmini-gara-me
 https://www.gazzetta.it/Formula-1/30-04-2026/kimi-antonelli-origini-storia-f1-speciale-gazzetta.shtml
 https://www.gazzetta.it/Formula-1/31-03-2026/rene-arnoux-intervista-antonelli-mi-ricorda-hamilton-e-senna.shtml
 https://www.gazzetta.it/Formula-1/scuderie/mclaren/21-04-2026/norris-e-la-sindrome-dell-impostore-merito-di-essere-in-f1.shtml
+https://www.gazzetta.it/Formula-1/scuderie/mclaren/22-05-2026/leonardo-fornaroli-intervista-sogno-di-sfidare-antonelli-in-pista.shtml
 https://www.gazzetta.it/Formula-1/scuderie/mclaren/23-04-2026/mclaren-ingaggiato-pilota-di-11-anni-chi-e-harry-williams.shtml
 https://www.gazzetta.it/Formula-1/scuderie/mclaren/27-03-2026/stella-mclaren-presto-in-corsa-per-podi-e-vittorie-mercedes-e-ferrari-piu-veloci.shtml
 https://www.gazzetta.it/Formula-1/scuderie/mclaren/28-04-2026/piastri-io-e-norris-difficile-essere-veri-amici-di-chi-vuoi-battere-24-volte-all-anno.shtml
@@ -1232,6 +1258,7 @@ https://www.motorsport.com/f1/news/f1-2026-rules-changes-can-happen-in-continuou
 https://www.motorsport.com/f1/news/f1-boss-issues-verdict-on-start-of-2026-season-backs-potential-changes/10812833
 https://www.motorsport.com/f1/news/f1-boss-responds-to-max-verstappens-criticism-of-2026-rules-his-voice-has-to-be-listened-to/10812823
 https://www.motorsport.com/f1/news/f1-brings-miami-gp-start-time-forward-amid-thunderstorm-threat/10817617
+https://www.motorsport.com/f1/news/f1-canadian-gp-tktkt-claims-sprint-pole/10823109
 https://www.motorsport.com/f1/news/f1-drivers-left-exhausted-by-2026-regulations-they-are-drained/10809946
 https://www.motorsport.com/f1/news/f1-fans-lose-it-as-esteban-ocons-cheeky-lewis-hamilton-reality-tv-joke-goes-viral/10810839
 https://www.motorsport.com/f1/news/f1-ferrari-outwits-mercedes-on-energy-how-leclerc-secured-the-podium/10810092
@@ -1265,6 +1292,7 @@ https://www.motorsport.com/f1/news/five-things-to-look-out-for-at-f1s-canada-gp/
 https://www.motorsport.com/f1/news/franco-colapinto-not-happy-with-oliver-bearmans-reaction-to-f1-japanese-gp-crash/10816638
 https://www.motorsport.com/f1/news/fred-vasseur-pinpoints-what-boosted-ferrari-morale-in-japan/10811062
 https://www.motorsport.com/f1/news/frequent-flyers-the-top-10-team-hoppers-of-the-f1-modern-era/10815836
+https://www.motorsport.com/f1/news/george-russell-on-20-point-gap-to-kimi-antonelli-it-means-nothing/10822909
 https://www.motorsport.com/f1/news/george-russell-reacts-to-max-verstappen-contemplating-his-f1-future/10813453
 https://www.motorsport.com/f1/news/george-russell-surprised-by-mclaren-and-ferrari-performance-jump-at-miami-gp/10817124
 https://www.motorsport.com/f1/news/george-russell-trying-kimi-antonellis-mercedes-f1-car-changes-made-a-bigger-impact-than-i-thought/10818159
@@ -1291,6 +1319,7 @@ https://www.motorsport.com/f1/news/james-vowles-reveals-huge-toto-wolff-role-in-
 https://www.motorsport.com/f1/news/jean-todt-explains-the-big-misconception-around-michael-schumacher/10811881
 https://www.motorsport.com/f1/news/jenson-button-and-jacques-villeneuve-set-for-2026-goodwood-revival-showdown-in-jaguar-e-types/10815093
 https://www.motorsport.com/f1/news/jenson-button-hails-ross-brawn-as-hondas-saviour-after-2007-f1-disaster/10821223
+https://www.motorsport.com/f1/news/jolyon-palmer-explains-canadian-gp-energy-management-challenge/10823160
 https://www.motorsport.com/f1/news/key-takeaways-mclaren-signing-max-verstappen-engineer-lambiase/10811681
 https://www.motorsport.com/f1/news/kimi-antonelli-earns-praise-from-former-f1-driver-after-miami-gp-battle-with-lando-norris/10819509
 https://www.motorsport.com/f1/news/kimi-antonelli-enjoys-easter-break-at-valentino-rossis-vr46-ranch/10811020
@@ -1322,6 +1351,7 @@ https://www.motorsport.com/f1/news/max-verstappen-supports-gianpiero-lambiases-r
 https://www.motorsport.com/f1/news/max-verstappen-suzuka-qualifying-red-bull/10808836
 https://www.motorsport.com/f1/news/max-verstappen-to-make-life-decisions-as-his-discontent-with-f1-grows/10809008
 https://www.motorsport.com/f1/news/max-verstappens-f1-retirement-threat-is-not-empty-warns-david-croft/10811059
+https://www.motorsport.com/f1/news/max-verstappens-feet-were-flying-off-the-pedals-as-red-bull-explains-montreal-struggles/10823208
 https://www.motorsport.com/f1/news/max-verstappens-take-on-red-bulls-problems-oliver-bearmans-crash-and-how-to-fix-2026-f1-rules/10809526
 https://www.motorsport.com/f1/news/mclaren-announces-major-intel-partnership-as-tech-giant-returns-to-f1/10820996
 https://www.motorsport.com/f1/news/mclaren-gives-f2-champion-leo-fornaroli-several-f1-tests/10811407
@@ -1380,6 +1410,7 @@ https://www.motorsport.com/f1/news/the-sports-world-is-in-mourning-alex-zanardi-
 https://www.motorsport.com/f1/news/the-starting-grid-for-the-2026-japanese-f1-grand-prix/10808871
 https://www.motorsport.com/f1/news/the-unique-f1-record-that-kimi-antonelli-broke-with-his-miami-gp-win/10818399
 https://www.motorsport.com/f1/news/the-youngest-ever-f1-records-kimi-antonelli-can-still-beat/10810876
+https://www.motorsport.com/f1/news/this-is-a-serious-matter-why-the-fia-hit-racing-bulls-with-a-30000-fine-and-a-stinging-rebuke/10823183
 https://www.motorsport.com/f1/news/toto-wolff-in-two-minds-on-christian-horner-f1-return-hes-broken-a-lot-of-glass/10809847
 https://www.motorsport.com/f1/news/toto-wolff-opens-up-on-shock-plan-to-sack-lewis-hamilton-and-nico-rosberg-in-2016-battle/10812300
 https://www.motorsport.com/f1/news/valtteri-bottas-unusual-miami-f1-penalty-explained-as-cadillac-makes-progress/10818596
@@ -1520,6 +1551,7 @@ https://www.planetf1.com/news/fia-lewis-hamilton-max-verstappen-double-standards
 https://www.planetf1.com/news/fia-mercedes-red-bull-f1-2026-engine-qualifying-loophole
 https://www.planetf1.com/news/fia-statement-2026-f1-rules-review-meetings-oliver-bearman-crash
 https://www.planetf1.com/news/fia-statement-2026-f1-rules-review-meetings-oliver-bearman-crash#viafoura-conversations-id
+https://www.planetf1.com/news/george-russell-kimi-antonelli-title-lead-means-nothing
 https://www.planetf1.com/news/george-russell-mercedes-f1-contract-situation-max-verstappen-rumours
 https://www.planetf1.com/news/george-russell-names-wish-list-next-f1-regulations-v8-engine
 https://www.planetf1.com/news/george-russell-radio-trick-charles-leclerc-cheeky-suzuka
@@ -1578,6 +1610,8 @@ https://www.planetf1.com/news/lewis-hamilton-critics-response-ferrari-podium-chi
 https://www.planetf1.com/news/lewis-hamilton-critics-response-ferrari-podium-china-2026#viafoura-conversations-id
 https://www.planetf1.com/news/lewis-hamilton-f1-2026-rules-enjoying-racing-max-verstappen-frustration
 https://www.planetf1.com/news/lewis-hamilton-f1-2026-rules-enjoying-racing-max-verstappen-frustration#viafoura-conversations-id
+https://www.planetf1.com/news/lewis-hamilton-ferrari-contract-2028-option-martin-brundle
+https://www.planetf1.com/news/lewis-hamilton-ferrari-contract-2028-option-martin-brundle#viafoura-conversations-id
 https://www.planetf1.com/news/lewis-hamilton-ferrari-race-engineer-miami-grand-prix-2026
 https://www.planetf1.com/news/lewis-hamilton-ferrari-race-engineer-miami-grand-prix-2026#viafoura-conversations-id
 https://www.planetf1.com/news/lewis-hamilton-ferrari-simulator-issue-canadian-gp-plan
@@ -1714,6 +1748,8 @@ https://www.planetf1.com/news/red-bull-decline-laurent-mekies-rebuild-max-versta
 https://www.planetf1.com/news/red-bull-decline-laurent-mekies-rebuild-max-verstappen-doubts#viafoura-conversations-id
 https://www.planetf1.com/news/red-bull-explains-how-max-verstappen-avoided-disqualification-isack-hadjar-incident
 https://www.planetf1.com/news/red-bull-explains-how-max-verstappen-avoided-disqualification-isack-hadjar-incident#viafoura-conversations-id
+https://www.planetf1.com/news/red-bull-response-jos-verstappen-toto-wolff-chat
+https://www.planetf1.com/news/red-bull-response-jos-verstappen-toto-wolff-chat#viafoura-conversations-id
 https://www.planetf1.com/news/red-bull-sidepods-spark-mclaren-scrutiny-as-max-verstappen-pace-shifts
 https://www.planetf1.com/news/red-bull-sidepods-spark-mclaren-scrutiny-as-max-verstappen-pace-shifts#viafoura-conversations-id
 https://www.planetf1.com/news/sebastian-vettel-britta-roeske-split
@@ -1835,6 +1871,9 @@ https://www.skysports.com/f1/news/12433/13545585/canadian-gp-george-russell-need
 https://www.skysports.com/f1/news/12433/13546658/lewis-hamilton-ferrari-driver-says-lots-of-people-are-trying-to-retire-me-as-he-confirms-contract-until-at-least-2027
 https://www.skysports.com/f1/news/12433/13546664/lewis-hamilton-reveals-emotional-reaction-to-arsenals-premier-league-title-win-and-why-he-is-proud-of-mikel-artetas-champions
 https://www.skysports.com/f1/news/12433/13546666/max-verstappen-red-bull-driver-suggests-proposed-2027-rule-changes-could-convince-him-to-stay-in-f1
+https://www.skysports.com/f1/news/12433/13547009/canadian-gp-kimi-antonelli-tops-mercedes-team-mate-george-russell-in-chaotic-practice-featuring-three-red-flags
+https://www.skysports.com/f1/news/12433/13547012/canadian-gp-sprint-qualifying-george-russell-pips-kimi-antonelli-to-pole-in-montreal-with-lando-norris-in-third
+https://www.skysports.com/f1/news/12433/13547016/canadian-gp-mercedes-george-russell-did-not-need-validation-after-claiming-sprint-pole-in-montreal
 https://www.skysports.com/f1/news/12472/13526164/george-russell-says-he-feels-all-of-mercedes-early-season-issues-are-impacting-him-rather-than-team-mate-kimi-antonelli
 https://www.skysports.com/f1/news/12472/13532954/george-russell-mercedes-driver-reacts-to-max-verstappens-f1-quit-threat-and-only-natural-complaints-from-red-bull-rival
 https://www.skysports.com/f1/news/12475/13526097/max-verstappen-laurent-mekies-confident-red-bull-can-give-dutchman-a-faster-car-from-miami-grand-prix-onwards
@@ -1842,3 +1881,4 @@ https://www.skysports.com/f1/news/12475/13532850/red-bull-announce-technical-res
 https://www.skysports.com/f1/news/24096/13526743/max-verstappen-martin-brundle-tells-the-f1-show-he-doesnt-think-red-bull-driver-will-quit-f1-amid-car-complaints
 https://www.skysports.com/f1/news/24096/13527651/george-russell-needs-to-treat-mercedes-team-mate-kimi-antonelli-like-peak-lewis-hamilton-says-martin-brundle
 https://www.skysports.com/f1/news/27451/12822277/the-f1-show-podcast-sky-sports
+https://www.skysports.com/f1/news/33694/13547014/canadian-gp-lewis-hamilton-plans-to-stick-with-not-using-ferrari-simulator-after-strong-sprint-qualifying
